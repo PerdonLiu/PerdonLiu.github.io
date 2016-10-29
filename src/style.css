@@ -1,0 +1,143 @@
+#puzzle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container {
+    width: 600px;
+    height: 360px;
+    margin: 0 auto;
+}
+
+#positioner {
+    float: left;
+    margin-left: 40px;
+}
+
+h1, #positioner, #show {
+    text-align: center;
+}
+
+#show {
+    clear: left;
+}
+
+#main {
+    float: left;
+    width: 356px;
+    height: 400px;
+}
+
+.part {
+    cursor: pointer;
+    float: left;
+    width: 85.5px;
+    height: 85.5px;
+    border: 1px solid #B8B8B8;
+}
+
+.part:hover {
+    transform: scale(1.05, 1.05);
+}
+
+#p0 {
+    background-position: 0 0;
+}
+
+#p1 {
+    background-position: -85.5px 0;
+}
+
+#p2 {
+    background-position: -171px 0;
+}
+
+#p3 {
+    background-position: -256.5px 0;
+}
+
+#p4 {
+    background-position: 0 -85.5px;
+}
+
+#p5 {
+    background-position: -85.5px -85.5px;
+}
+
+#p6 {
+    background-position: -171px -85.5px;
+}
+
+#p7 {
+    background-position: -256.5px -85.5px;
+}
+
+#p8 {
+    background-position: 0 -171px;
+}
+
+#p9 {
+    background-position: -85.5px -171px;
+}
+
+#p10 {
+    background-position: -171px -171px;
+}
+
+#p11 {
+    background-position: -256.5px -171px;
+}
+
+#p12 {
+    background-position: 0 -256.5px;
+}
+
+#p13 {
+    background-position: -85.5px -256.5px;
+}
+
+#p14 {
+    background-position: -171px -256.5px;
+}
+
+#p15 {
+    background-image: none !important;
+}
+
+#start, #easy, #recover, #show, #change {
+    margin: 20px auto;
+    color: #ECF3FF;
+    background-color: #3684F7;
+    line-height: 40px;
+    font-size: 20px;
+    box-shadow: 5px 5px 5px #9A9A9B;
+    cursor: pointer;
+}
+#start, #easy, #recover, #change {
+    width: 120px;
+    height: 40px;
+}
+
+#start:active, #easy:active, #recover:active, #change:active {
+    transform: translate(0, 10px);
+}
+
+img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 30px auto;
+    border: 5px inset #EEEEEE;
+}
+
+.panda {
+    background-image: url(../image/panda.jpg);
+}
+
+.animal {
+    background-image: url(../image/animal.jpg);
+}
+
+.house {
+    background-image: url(../image/house.jpg);
+}
