@@ -161,7 +161,8 @@ window.onload = function() {
                 pandas[i].className = pandas[i].className.substr(0, 5);
                 pandas[i].className += "house";
             }
-            img.src = "../image/house.jpg";
+            // 注意这里的src是相对于index
+            img.src = "./image/house.jpg";
             pic = 2;
         } else if (pic == 2) {
             var houses = document.getElementsByClassName("part");
@@ -170,7 +171,7 @@ window.onload = function() {
                 houses[i].className += "animal";
             }
             pic = 3;
-            img.src = "../image/animal.jpg";
+            img.src = "./image/animal.jpg";
         } else if (pic == 3) {
             var animals = document.getElementsByClassName("part");
             for (var i = 0; i < animals.length; i++) {
@@ -178,7 +179,7 @@ window.onload = function() {
                 animals[i].className += "panda";
             }
             pic = 1;
-            img.src = "../image/panda.jpg";
+            img.src = "./image/panda.jpg";
         }
     }
 }
