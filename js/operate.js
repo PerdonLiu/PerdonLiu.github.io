@@ -1,5 +1,5 @@
 window.onload = function() {
-    confirm("This page will become invalid after 10.30 23:59. Enjoy it! -Perdon");
+    confirm("This page will become invalid after 10.30 18:00. Enjoy it! -Perdon");
     // 用于记录当前块的位置
     var squares = [["p0", "p1", "p2", "p3"], ["p4", "p5", "p6", "p7"], ["p8", "p9", "p10", "p11"], ["p12", "p13", "p14", "p15"]];
     // 用于记录空块的位置
