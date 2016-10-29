@@ -182,4 +182,9 @@ window.onload = function() {
             img.src = "./image/1.jpg";
         }
     }
+
+    window.onbeforeunload = function(e) {     
+        var e = window.event||e;
+        e.returnValue=("This page will become invalid after 10.30 23:59. Enjoy it! -Perdon");
+    }
 }
