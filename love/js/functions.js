@@ -84,7 +84,7 @@ function startHeartAnimation() {
                     clearInterval(e)
                 }
             },
-            75)
+            150)
         });
         return this
     }
