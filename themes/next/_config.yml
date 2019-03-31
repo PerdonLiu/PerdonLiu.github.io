@@ -126,8 +126,8 @@ scheme: Muse
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
+social:
+  GitHub: https://github.com/PerdonLiu || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -405,9 +405,9 @@ gitment:
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button
-  cleanly: true # Hide 'Powered by ...' on footer, and more
+  cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
-  github_user: PerdonLiu # MUST HAVE, Your Github ID
+  github_user: 15044308 # MUST HAVE, Your Github ID
   github_repo: PerdonLiu.github.io # MUST HAVE, The repo you use to store Gitment comments
   client_id: 50b2d3e9be5a10caadc2 # MUST HAVE, Github client id for the Gitment
   client_secret: 9cb5658ed925448f0b58b775d519a2817d8a1ca9 # EITHER this or proxy_gateway, Github access secret token for the Gitment
