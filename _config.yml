@@ -7,7 +7,7 @@ title: Hexo
 subtitle:
 description:
 keywords:
-author: John Doe !!!!
+author: Charles
 language:
 timezone:
 
@@ -82,10 +82,3 @@ deploy:
   type: git
   repo: git@github.com:PerdonLiu/PerdonLiu.github.io.git
   branch: master
-
-social:
-  GitHub: your-github-url
-  Twitter: your-twitter-url
-  Weibo: your-weibo-url
-  DouBan: your-douban-url
-  ZhiHu: your-zhihu-url
