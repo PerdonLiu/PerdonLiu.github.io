@@ -419,43 +419,6 @@
           
 
   
-   <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-   <div id="container" style="display:none"></div>
-   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-   <script>
-   const myTheme = {
-     render(state, instance) {
-       const container = document.createElement('div');
-       container.lang = "en-US";
-       container.className = 'gitment-container gitment-root-container';
-       container.appendChild(instance.renderHeader(state, instance));
-       container.appendChild(instance.renderEditor(state, instance));
-       container.appendChild(instance.renderComments(state, instance));
-       container.appendChild(instance.renderFooter(state, instance));
-       return container;
-     }
-   }
-   function showGitment() {
-     $("#gitment_title").attr("style", "display:none");
-     $("#container").attr("style", "").addClass("gitment_container");
-     var gitment = new Gitment({
-       id: window.location.pathname,
-       theme: myTheme,
-       owner: '',
-       repo: '',
-       oauth: {
-         client_id: '50b2d3e9be5a10caadc2',
-         client_secret: '9cb5658ed925448f0b58b775d519a2817d8a1ca9'
-       }
-     });
-     gitment.render('container');
-   }
-   </script>
-
-  
-
-
 
         </div>
         
@@ -767,7 +730,7 @@
         var gitment = new Gitmint({
             #id: window.location.pathname, 
             id: ''
-            owner: 'PerdonLiu',
+            owner: 'perdonliu',
             repo: 'gitment-comments',
             
             lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
