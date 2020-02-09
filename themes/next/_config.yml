@@ -93,13 +93,13 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  主页: /homepage/homepage_CN.html || user
+  # tags: /tags/ || tags
+  # categories: /categories/ || th
   archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  # schedule: /schedule/ || calendar
+  # sitemap: /sitemap.xml || sitemap
+  # commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -128,7 +128,7 @@ scheme: Muse
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/PerdonLiu || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  E-Mail: mailto:perdon.liu@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -243,8 +243,8 @@ post_wordcount:
 
 # Reward
 #reward_comment: Donate comment here
-#wechatpay: /images/wechatpay.jpg
-#alipay: /images/alipay.jpg
+wechatpay: /images/wechatpay.JPG
+alipay: /images/alipay.JPG
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
@@ -353,7 +353,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 767db4ee1769de108fba6ac84b763cf3
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -407,8 +407,8 @@ gitment:
   lazy: false # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
-  github_user: 15044308 # MUST HAVE, Your Github ID
-  github_repo: PerdonLiu.github.io # MUST HAVE, The repo you use to store Gitment comments
+  github_user: PerdonLiu # MUST HAVE, Your Github ID
+  github_repo: gitment-comments # MUST HAVE, The repo you use to store Gitment comments
   client_id: 50b2d3e9be5a10caadc2 # MUST HAVE, Github client id for the Gitment
   client_secret: 9cb5658ed925448f0b58b775d519a2817d8a1ca9 # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
@@ -425,7 +425,7 @@ gitment:
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-#jiathis:
+# jiathis: true
   ##uid: Get this uid from http://www.jiathis.com/
 #add_this_id:
 
@@ -531,9 +531,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: True
+  app_id: 2u9tLGh224D7Qh91G20W86U4-gzGzoHsz
+  app_key: vV2wR9yEE4DgQmHeKcUgrLB8
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId

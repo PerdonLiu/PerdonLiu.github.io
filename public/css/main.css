@@ -1641,6 +1641,126 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
+#rewardButton {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  letter-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+}
+#rewardButton span {
+  display: inline-block;
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  font-stretch: normal;
+  font-size: 18px;
+  font-family: "Microsoft Yahei";
+  background: #f44336;
+}
+#rewardButton span:hover {
+  background: #f7877f;
+}
+#QR {
+  padding-top: 20px;
+}
+#QR a {
+  border: 0;
+}
+#QR img {
+  width: 180px;
+  max-width: 100%;
+  display: inline-block;
+  margin: 0.8em 2em 0 2em;
+}
+#wechat:hover p {
+  animation: roll 0.1s infinite linear;
+  -webkit-animation: roll 0.1s infinite linear;
+  -moz-animation: roll 0.1s infinite linear;
+}
+#alipay:hover p {
+  animation: roll 0.1s infinite linear;
+  -webkit-animation: roll 0.1s infinite linear;
+  -moz-animation: roll 0.1s infinite linear;
+}
+#bitcoin:hover p {
+  animation: roll 0.1s infinite linear;
+  -webkit-animation: roll 0.1s infinite linear;
+  -moz-animation: roll 0.1s infinite linear;
+}
+@-moz-keyframes roll {
+  from {
+    -webkit-transform: rotateZ(30deg);
+    -moz-transform: rotateZ(30deg);
+    -ms-transform: rotateZ(30deg);
+    -o-transform: rotateZ(30deg);
+    transform: rotateZ(30deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-30deg);
+    -moz-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+    -o-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
+  }
+}
+@-webkit-keyframes roll {
+  from {
+    -webkit-transform: rotateZ(30deg);
+    -moz-transform: rotateZ(30deg);
+    -ms-transform: rotateZ(30deg);
+    -o-transform: rotateZ(30deg);
+    transform: rotateZ(30deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-30deg);
+    -moz-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+    -o-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
+  }
+}
+@-o-keyframes roll {
+  from {
+    -webkit-transform: rotateZ(30deg);
+    -moz-transform: rotateZ(30deg);
+    -ms-transform: rotateZ(30deg);
+    -o-transform: rotateZ(30deg);
+    transform: rotateZ(30deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-30deg);
+    -moz-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+    -o-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
+  }
+}
+@keyframes roll {
+  from {
+    -webkit-transform: rotateZ(30deg);
+    -moz-transform: rotateZ(30deg);
+    -ms-transform: rotateZ(30deg);
+    -o-transform: rotateZ(30deg);
+    transform: rotateZ(30deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-30deg);
+    -moz-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+    -o-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
+  }
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1822,7 +1942,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #60f4ff;
+  background: #f5e5a7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2597,6 +2717,56 @@ pre .javascript .function {
 }
 .page-post-detail .comments {
   overflow: hidden;
+}
+.gitment_title:hover {
+  color: #fff;
+  background: #0a9caf;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: #0a9caf;
+}
+.gitment_title {
+  border: 1px solid #0a9caf;
+  border-top-color: #0a9caf;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: #0a9caf;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: #0a9caf;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #0a9caf;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.gitment_title {
+  display: inline-block;
+  padding: 0 15px;
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+  color: #0a9caf;
+  cursor: pointer;
+  font-size: 14px;
 }
 @media (max-width: 767px) {
   .header-inner,

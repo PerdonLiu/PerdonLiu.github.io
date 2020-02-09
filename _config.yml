@@ -3,12 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 刘沛东的博客
 subtitle:
 description:
 keywords:
-author: Charles
-language:
+author: 刘沛东
+avatar: 
+language: zh-Hans
 timezone:
 
 # URL
