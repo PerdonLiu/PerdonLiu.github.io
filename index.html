@@ -36,10 +36,10 @@
         
         <h2>Biography</h2>
         <p>
-            I am currently a project owner for the multimodal large model at the DJI Automotive Perception Group and especially focus on mining long-tail data of user interest within massive video databases. Specifically, I focus on generating high-quality text-image pairs for autonomous driving scenes using LLM (Large Language Model) and Diffusion Model, which can empower large retrieval model. If you are interested in an internship opportunity, please feel free to drop me an email.
+            I am currently a lead for the visual-language-action model (VLA) at the DJI Automotive Perception Group and especially focus on fine-tuning or prompting VLA to address the challenges posed by long-tailed scenarios. Before that, I was primarily responsible for the Bird's Eye View (BEV) lane detection and large-scale multimodal retrieval systems. If you are interested in an internship opportunity, please feel free to drop me an email.
         </p>
         <p>
-            I obtained my M.S. in Computer Science from Tsinghua University in 2022, as an outstanding graduate. I have been fortunate to closely work with Prof. <a href="https://scholar.google.com/citations?user=voxznZAAAAAJ&hl=en&oi=ao" target=_blank>Xiaodan Liang</a> at Sun Yat-sen University, Dr. <a href="https://scholar.google.com/citations?user=J_8TX6sAAAAJ&hl=en&oi=ao" target=_blank>Hang Xu</a> at Huawei Noah's Ark Lab, Dr. <a href="https://scholar.google.com/citations?user=PnNAAasAAAAJ&hl=en&oi=ao" target=_blank>Litong Feng</a> and Dr. <a href="https://scholar.google.com/citations?user=q4lnWaoAAAAJ&hl=en&oi=ao" target=_blank>Xinjiang Wang</a> at SenseTime Research. I received my B.S. in Software Engineering from Sun Yat-sen University summa cum laude in 2019. My research interest lies in computer vision and multimodal large model.
+            I obtained my M.S. in Computer Science from Tsinghua University in 2022, as an outstanding graduate. I have been fortunate to closely work with Prof. <a href="https://scholar.google.com/citations?user=voxznZAAAAAJ&hl=en&oi=ao" target=_blank>Xiaodan Liang</a> at Sun Yat-sen University, Dr. <a href="https://scholar.google.com/citations?user=J_8TX6sAAAAJ&hl=en&oi=ao" target=_blank>Hang Xu</a> at Huawei Noah's Ark Lab, Dr. <a href="https://scholar.google.com/citations?user=PnNAAasAAAAJ&hl=en&oi=ao" target=_blank>Litong Feng</a> and Dr. <a href="https://scholar.google.com/citations?user=q4lnWaoAAAAJ&hl=en&oi=ao" target=_blank>Xinjiang Wang</a> at SenseTime Research. I received my B.S. in Software Engineering from Sun Yat-sen University summa cum laude in 2019. My research interest lies in computer vision and visual-language model.
         </p>
         <!--  After I obtain master's degree, I will join DJI Automotive as an algorithm engineer for perception, led by Dr. <a href="https://scholar.google.com.hk/citations?user=GArEeWQAAAAJ" target=_blank>Xiaozhi Chen</a> and Prof. <a href="https://scholar.google.com/citations?user=u8Q0_xsAAAAJ" target=_blank>Shaojie Shen</a>, and contribute to the field of autonomous driving. My supervisor is Prof. <a href="https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ" target=_blank>Shu-Tao Xia</a>. -->
         <!-- (led by Dr. <a href="https://scholar.google.com.hk/citations?user=GArEeWQAAAAJ" target=_blank>Xiaozhi Chen</a> and Prof. <a href="https://scholar.google.com/citations?user=u8Q0_xsAAAAJ" target=_blank>Shaojie Shen</a>) -->
@@ -58,6 +58,20 @@
 
         <h2>Publications</h2>
         * denotes equal contribution.
+        <table style="width:100%">
+            <tr>
+                <td rowspan="3" width='30%'><img src='file/CLIP4Drive.png' width='100%'></img></td>
+                <td rowspan="3" width='2%'></td>
+                <td><h4>CLIP4Drive: Pioneering Tail Data Retrieval for Autonomous Driving</h4></td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- <p><b style="color:black">Peidong Liu</b>, Jinmin Li, Jie Mei, Bin Xu, Xiaozhi Chen</p> -->
+                    <p>In Submission</p>
+                </td>
+            </tr>
+        </table>
+
         <table style="width:100%">
             <tr>
                 <td rowspan="3" width='30%'><img src='file/SimCC.png' width='100%'></img></td>
@@ -90,7 +104,7 @@
             <tr>
                 <td rowspan="3" width='30%'><img src='file/MTRUB.jpg' width='100%'></img></td>
                 <td rowspan="3" width='2%'></td>
-                <td><h4>Multi-task Ranking with User Behaviors for Text-Video Search [<a href="https://www2022.thewebconf.org/PaperFiles/23.pdf">PDF</a>]</h4></td>
+                <td><h4>Multi-task Ranking with User Behaviors for Text-Video Search [<a href="https://dl.acm.org/doi/10.1145/3487553.3524207">PDF</a>]</h4></td>
             </tr>
             <tr>
                 <td>
@@ -201,7 +215,8 @@
                     <td valign="top" width="16%">2022.07 - till now      </td>
                     <td><b class="Institute">Perception Group, DJI Automotive</b><br>
                     <b class="Status">Advanced Computer Vision Algorithm Engineer</b><br>
-                    <li class="Works" margin-left="10000px">Currently, I am fully responsible for the multimodal large model in image-text retrieval, focusing on mining long-tail data of user interest within massive video databases, with the aim of empowering autonomous driving applications. Specifically, I leverage LLM (Large Language Model) and Diffusion Model to generate synthetic data, augmenting the existing dataset and enhancing the model's performance</li>
+                    <li class="Works" margin-left="10000px">Currently, I am responsible for applying Visual-Language-Action (VLA) models in autonomous driving from scratch, which encompasses an extensive survey of open-source data and models, the establishment of data annotation and model fine-tuning pipeline. This latter includes the design of prompts, Lora fine-tuning, and the utilization of Deepspeed for multi-node training. By leveraging both open-source and proprietary datasets, the model has been fine-tuned to possess capabilities in perception, decision-making, and planning. These models are now capable of generating human-like trajectories even in long-tail scenarios</li>
+                    <li class="Works" margin-left="10000px">Developed the multimodal large model in image-text retrieval, focusing on mining long-tail data of user interest within massive video databases, with the aim of empowering autonomous driving applications. Specifically, I leverage LLM (Large Language Model) and Diffusion Model to generate synthetic data, augmenting the existing dataset and enhancing the model's performance</li>
                     <li class="Works" margin-left="10000px">Developed multiple Bird-Eye-View (BEV) lane detection solutions, including temporal BEV, fisheye BEV and road topology, aiming to facilitate the implementation of various solutions in mass production projects <p><b>(I achieved great performance as a result of my accomplishments)</b> </li>
                     <li class="Works" margin-left="10000px">Optimized Closed-loop lane detection data recycle process, which involves the entire cycle of data collection, feedback, filtering, reconstruction, annotation, etc. This comprehensive approach has greatly improved data recycle efficiency by over 100% through streamlining coordination and collaboration among several modules <b>(I was awarded the 2023 Annual Efficiency Vanguard Award at DJI Automotive due to my outstanding contributions)</b></p> </li>
                 </tr>
@@ -396,7 +411,7 @@
         </div>
     </div>
 
-    Last updated on Jan 2024. There are <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> visitors, with <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span>times</span> till now.</span>
+    Last updated on Dec 2024. There are <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> visitors, with <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span>times</span> till now.</span>
 
 </body>
 
