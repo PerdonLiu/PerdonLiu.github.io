@@ -2,6 +2,15 @@
 <link rel="stylesheet" href="file/index.css" type="text/css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<style>
+    .career-timeline { margin: 26px 0 34px; overflow-x: auto; padding: 4px 0 8px; }
+    .career-track { position: relative; display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr)); min-width: 600px; padding-top: 2px; }
+    .career-track::before { content: ""; position: absolute; left: 7%; right: 7%; top: 9px; height: 2px; background: linear-gradient(90deg, #cccccc, #527bbd); }
+    .career-stop { position: relative; padding: 24px 10px 0; text-align: center; }
+    .career-stop::before { content: ""; position: absolute; top: 3px; left: 50%; width: 12px; height: 12px; transform: translateX(-50%); border-radius: 50%; background: #527bbd; border: 3px solid #ffffff; box-shadow: 0 0 0 1px #527bbd; }
+    .career-year { display: block; color: #365f9d; font-size: 13px; font-weight: bold; }
+    .career-place { display: block; margin-top: 4px; color: #333333; font-size: 14px; line-height: 1.35; }
+</style>
 
 <title>Peidong Liu</title>
 <body>
@@ -14,7 +23,7 @@
                             <h1>Peidong Liu<img src="file/lpd_chinese.png" height="40px" style="margin-bottom:-10px;margin-left:20px"></h1>
                             <!-- <a href="file/CV_CN.pdf" target="_blank"><font size="2px">[中文简历]</font></a> -->
                             <a href="https://scholar.google.com/citations?user=pNBIQ8wAAAAJ&hl=en" target="_blank"><font size="2px">[Google Scholar]</font></a>
-                            <!-- <a href="homepage_CN.html"><font size="2px">[中文版主页]</font></a> -->
+                            <a href="index_cn.html"><font size="2px">[中文主页]</font></a>
                             <!-- <a href="https://github.com/PerdonLiu" target="_blank"><font size="2px">[Github]</font></a> -->
                         </div>
                         <!-- <h3>Advanced Algorithm Engineer in DJI Automotive</h3> -->
@@ -40,8 +49,16 @@
             I am currently an embodied foundation model researcher at JD Explore Academy. My work primarily focuses on pre-training embodied foundation models, with particular emphasis on Visual-Language-Action Models and World Action Models. I also explore physically aligned world-model paradigms that bridge video observations and the physical world by modeling three-dimensional structure, physical properties, and causal dynamics. If you are interested in an internship opportunity, please feel free to drop me an email.
         </p>
         <p>
-             Before that, I was a lead for the visual-language-action model (VLA) at the DJI Automotive and especially focus on fine-tuning VLA to address the challenges posed by long-tailed scenarios. I obtained my M.S. in Computer Science from Tsinghua University in 2022, as an outstanding graduate. I have been fortunate to closely work with Prof. <a href="https://scholar.google.com/citations?user=voxznZAAAAAJ&hl=en&oi=ao" target=_blank>Xiaodan Liang</a> at Sun Yat-sen University, Dr. <a href="https://scholar.google.com/citations?user=J_8TX6sAAAAJ&hl=en&oi=ao" target=_blank>Hang Xu</a> at Huawei Noah's Ark Lab, Dr. <a href="https://scholar.google.com/citations?user=PnNAAasAAAAJ&hl=en&oi=ao" target=_blank>Litong Feng</a> and Dr. <a href="https://scholar.google.com/citations?user=q4lnWaoAAAAJ&hl=en&oi=ao" target=_blank>Xinjiang Wang</a> at SenseTime Research. I received my B.S. in Software Engineering from Sun Yat-sen University summa cum laude in 2019. My research interest lies in computer vision and visual-language model.
+             Before that, I was a lead for the visual-language-action model (VLA) at the DJI Automotive and especially focus on fine-tuning VLA to address the challenges posed by long-tailed scenarios. I obtained my M.S. in Computer Science from Tsinghua University in 2022, as an outstanding graduate. I have been fortunate to closely work with Prof. <a href="https://scholar.google.com/citations?user=voxznZAAAAAJ&hl=en&oi=ao" target=_blank>Xiaodan Liang</a> at Sun Yat-sen University, Dr. <a href="https://scholar.google.com/citations?user=J_8TX6sAAAAJ&hl=en&oi=ao" target=_blank>Hang Xu</a> at Huawei Noah's Ark Lab, Dr. <a href="https://scholar.google.com/citations?user=PnNAAasAAAAJ&hl=en&oi=ao" target=_blank>Litong Feng</a> and Dr. <a href="https://scholar.google.com/citations?user=q4lnWaoAAAAJ&hl=en&oi=ao" target=_blank>Xinjiang Wang</a> at SenseTime Research. I received my B.S. in Software Engineering from Sun Yat-sen University summa cum laude in 2019. I have also worked as a research intern at SenseTime, WeChat, and Huawei Noah's Ark Lab. My research interest lies in computer vision and visual-language model.
         </p>
+        <div class="career-timeline" aria-label="Education and career timeline">
+            <div class="career-track">
+                <div class="career-stop"><span class="career-year">2015–2019</span><span class="career-place">Sun Yat-sen University</span></div>
+                <div class="career-stop"><span class="career-year">2019–2022</span><span class="career-place">Tsinghua University</span></div>
+                <div class="career-stop"><span class="career-year">2022–2025</span><span class="career-place">DJI Automotive (Zhuoyu)</span></div>
+                <div class="career-stop"><span class="career-year">2025–Present</span><span class="career-place">JD Explore Academy</span></div>
+            </div>
+        </div>
         <!--  After I obtain master's degree, I will join DJI Automotive as an algorithm engineer for perception, led by Dr. <a href="https://scholar.google.com.hk/citations?user=GArEeWQAAAAJ" target=_blank>Xiaozhi Chen</a> and Prof. <a href="https://scholar.google.com/citations?user=u8Q0_xsAAAAJ" target=_blank>Shaojie Shen</a>, and contribute to the field of autonomous driving. My supervisor is Prof. <a href="https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ" target=_blank>Shu-Tao Xia</a>. -->
         <!-- (led by Dr. <a href="https://scholar.google.com.hk/citations?user=GArEeWQAAAAJ" target=_blank>Xiaozhi Chen</a> and Prof. <a href="https://scholar.google.com/citations?user=u8Q0_xsAAAAJ" target=_blank>Shaojie Shen</a>) -->
         <h2>News</h2>
@@ -60,13 +77,59 @@
             <li>(2021-01) <a href="https://openreview.net/forum?id=5jzlpHvvRk">Our paper</a> is accecpted by ICLR2021. The first Autoloss work for object detection. The code is released <a href="https://github.com/PerdonLiu/CSE-Autoloss">here</a>.</li>
         </ul>
 
+        <h2>Project</h2>
+        <table style="width:100%; border-spacing:0; margin-bottom:28px">
+            <tr>
+                <td style="display:block; width:auto; border:1px solid #ddd; padding:18px; margin-bottom:18px; vertical-align:top">
+                    <h3>JoyAI Embodied Intelligence Series</h3>
+                    <p>
+                        JoyAI-RA 0.1 is a foundation model for robotic autonomy, while JoyAI-Sim is a simulation-enabled
+                        interconversion toolchain for the embodied data pyramid.
+                    </p>
+                    <p>
+                        Project pages:
+                        <a href="https://joyai-ra.github.io/" target="_blank">JoyAI-RA 0.1</a> ·
+                        <a href="https://joyai-sim.github.io/" target="_blank">JoyAI-Sim</a>
+                    </p>
+                    <div style="margin-top:18px; padding-top:14px; border-top:1px solid #ddd">
+                        <h4>JoyAI-RA 0.1 Demo</h4>
+                        <video controls autoplay muted loop playsinline preload="metadata" poster="file/JoyAI-RA-0p1.png" style="width:100%; height:auto">
+                            <source src="file/joyai-ra-0p1-web.mp4" type="video/mp4">
+                            Your browser does not support embedded video.
+                        </video>
+                    </div>
+                    <div style="margin-top:18px; padding-top:14px; border-top:1px solid #ddd">
+                        <h4>JoyAI-Sim Demo</h4>
+                        <img src="file/JoyAI-Sim-pyramid.gif" alt="JoyAI-Sim embodied data pyramid demo" style="width:100%; height:auto">
+                    </div>
+                </td>
+                <td style="display:block; width:auto; border:1px solid #ddd; padding:18px; vertical-align:top">
+                    <h3>End-to-End VLA for Autonomous Driving</h3>
+                    <p>
+                        At DJI Automotive (now Zhuoyu Technology), I led the end-to-end VLA effort and deployed
+                        large multimodal models on the NVIDIA DRIVE Thor platform.
+                    </p>
+                    <p>
+                        <a href="https://mp.weixin.qq.com/s/CZh5PSnfoIkE_etBQZMY4A" target="_blank">View the Zhuoyu VLA deployment introduction</a>
+                    </p>
+                    <div style="margin-top:18px; padding-top:14px; border-top:1px solid #ddd">
+                        <h4>Zhuoyu VLA Scene Understanding Demos</h4>
+                        <img src="file/zhuoyu_vla1.gif" alt="Zhuoyu VLA understands construction-zone conditions" style="width:100%; height:auto">
+                        <p style="margin-top:6px">Understanding construction-zone conditions</p>
+                        <img src="file/zhuoyu_vla2.gif" alt="Zhuoyu VLA understands intersection scenarios" style="width:100%; height:auto; margin-top:10px">
+                        <p style="margin-top:6px">Understanding intersection scenarios</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
         <h2>Publications</h2>
         * denotes equal contribution.
         <table style="width:100%">
             <tr>
                 <td rowspan="3" width='30%'><img src='file/JoyAI-Sim.png' width='100%'></img></td>
                 <td rowspan="3" width='2%'></td>
-                <td><h4>JoyAI-Sim: A Simulation-Enabled Interconversion Toolchain for the Embodied Data Pyramid [<a href="https://arxiv.org/pdf/2606.16776">PDF</a>]</h4></td>
+                <td><h4>JoyAI-Sim: A Simulation-Enabled Interconversion Toolchain for the Embodied Data Pyramid [<a href="https://arxiv.org/pdf/2606.16776">PDF</a>] [<a href="https://joyai-sim.github.io/">Project Page</a>]</h4></td>
             </tr>
             <tr>
                 <td>
@@ -75,12 +138,11 @@
                 </td>
             </tr>
         </table>
-
         <table style="width:100%">
             <tr>
                 <td rowspan="3" width='30%'><img src='file/JoyAI-RA-0p1.png' width='100%'></img></td>
                 <td rowspan="3" width='2%'></td>
-                <td><h4>JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy [<a href="https://arxiv.org/pdf/2604.20100">PDF</a>]</h4></td>
+                <td><h4>JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy [<a href="https://arxiv.org/pdf/2604.20100">PDF</a>] [<a href="https://joyai-ra.github.io/">Project Page</a>]</h4></td>
             </tr>
             <tr>
                 <td>
@@ -89,7 +151,6 @@
                 </td>
             </tr>
         </table>
-
         <table style="width:100%">
             <tr>
                 <td rowspan="3" width='30%'><img src='file/PhysicalWorld.png' width='100%'></img></td>

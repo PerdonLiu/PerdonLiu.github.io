@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刘沛东 · Peidong Liu — 具身基础模型预训练负责人</title>
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --surface: #ffffff;
+    --ink: #1b1b1f;
+    --muted: #6a6a72;
+    --faint: #93939b;
+    --line: #e8e6e0;
+    --accent: #4f46e5;
+    --accent-2: #7c3aed;
+    --accent-soft: #eef0ff;
+    --accent-ink: #3730a3;
+    --gold: #b7791f;
+    --gold-soft: #fdf6e3;
+    --shadow: none;
+    --shadow-hover: none;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei",
+                 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: #fff;
+    padding: 84px 24px 108px;
+    background:
+      radial-gradient(1200px 400px at 15% -10%, rgba(124,58,237,.55), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(56,89,224,.45), transparent 55%),
+      linear-gradient(135deg, #1a1740 0%, #2b2670 48%, #3f3aa6 100%);
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity: .5;
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 940px; margin: 0 auto; position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 44px; }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-photo { flex: 0 0 auto; }
+  .hero-photo img {
+    width: 190px; height: 190px; object-fit: cover; border-radius: 20px;
+    border: 3px solid rgba(255,255,255,.28);
+    box-shadow: 0 12px 36px rgba(10,8,40,.45);
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+    color: #cdd0ff; background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    padding: 5px 13px; border-radius: 999px; margin-bottom: 22px;
+  }
+  .hero h1 {
+    margin: 0 0 4px;
+    font-size: 52px; line-height: 1.08; font-weight: 800; letter-spacing: -.01em;
+  }
+  .hero h1 .en { font-size: 24px; font-weight: 500; color: #c9ccff; margin-left: 14px; letter-spacing: .01em; }
+  .hero .role { font-size: 19px; color: #e7e8ff; margin: 14px 0 6px; font-weight: 600; }
+  .hero .affil { font-size: 15px; color: #b9bcf0; margin: 0 0 26px; }
+  .hero .lead {
+    font-size: 16.5px; color: #e9eaff; max-width: 720px; margin: 0 0 30px;
+    border-left: 3px solid rgba(255,255,255,.35); padding-left: 16px;
+  }
+  .contacts { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14px; color: #fff;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.22);
+    padding: 8px 15px; border-radius: 10px; transition: background .18s, transform .18s;
+  }
+  .chip:hover { background: rgba(255,255,255,.22); text-decoration: none; transform: translateY(-1px); }
+  .chip svg { width: 16px; height: 16px; opacity: .95; }
+
+  /* ---------- Sticky nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(247,246,243,.82);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 940px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; gap: 22px; height: 54px;
+  }
+  .nav .brand { font-weight: 700; font-size: 15px; color: var(--ink); }
+  .nav .links { display: flex; gap: 20px; margin-left: auto; flex-wrap: wrap; }
+  .nav .links a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
+  .nav .links a:hover { color: var(--accent); text-decoration: none; }
+
+  /* ---------- Layout ---------- */
+  main { max-width: 940px; margin: 0 auto; padding: 8px 24px 40px; }
+  section { margin-top: 56px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
+  .sec-head h2 {
+    font-size: 24px; font-weight: 750; margin: 0; letter-spacing: -.01em;
+    position: relative; padding-left: 15px;
+  }
+  .sec-head h2::before {
+    content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 5px;
+    border-radius: 3px; background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  }
+  .sec-head .sub { color: var(--faint); font-size: 14px; }
+
+  /* ---------- About ---------- */
+  .about {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 30px 34px; box-shadow: var(--shadow);
+  }
+  .about p { font-size: 16.5px; margin: 0 0 16px; color: #29292f; }
+  .about p:last-child { margin-bottom: 0; }
+  .about strong { color: var(--accent-ink); font-weight: 700; }
+  .kw { color: var(--accent-ink); font-weight: 600; }
+  .career-timeline { margin-top: 26px; overflow-x: auto; padding: 4px 0 8px; }
+  .career-track {
+    position: relative; display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr));
+    min-width: 600px; padding-top: 2px;
+  }
+  .career-track::before {
+    content: ""; position: absolute; left: 7%; right: 7%; top: 9px;
+    height: 2px; background: linear-gradient(90deg, var(--line), var(--accent));
+  }
+  .career-stop { position: relative; padding: 24px 10px 0; text-align: center; }
+  .career-stop::before {
+    content: ""; position: absolute; top: 3px; left: 50%; width: 12px; height: 12px;
+    transform: translateX(-50%); border-radius: 50%; background: var(--accent);
+    border: 3px solid var(--surface); box-shadow: 0 0 0 1px var(--accent);
+  }
+  .career-year { display: block; color: var(--accent-ink); font-size: 12px; font-weight: 700; }
+  .career-place { display: block; margin-top: 3px; color: #33333a; font-size: 13px; line-height: 1.4; }
+
+  /* ---------- Project cards ---------- */
+  .cards { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px 24px; box-shadow: var(--shadow); transition: transform .18s, box-shadow .18s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .card .tag {
+    display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .02em;
+    color: var(--accent-ink); background: var(--accent-soft);
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .card p { margin: 0; font-size: 14.5px; color: var(--muted); }
+  .card .refs { margin-top: 12px; font-size: 12.5px; color: var(--faint); }
+  .project-media {
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .project-media h4 { margin: 0 0 8px; font-size: 14px; color: var(--accent-ink); }
+  .project-media img, .project-media video {
+    display: block; width: 100%; height: auto; border-radius: 10px;
+    background: #111; border: 1px solid var(--line);
+  }
+  .project-media .caption { margin: 7px 0 0; font-size: 12.5px; color: var(--faint); }
+  .demo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .demo-pair figure { margin: 0; }
+  .demo-pair figcaption { margin-top: 6px; font-size: 12px; color: var(--muted); }
+
+  /* ---------- Timeline ---------- */
+  .timeline { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 0; }
+  .tl-item { position: relative; padding: 0 0 20px 26px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg);
+  }
+  .tl-item .date { font-size: 13px; font-weight: 700; color: var(--accent-ink); }
+  .tl-item .desc { font-size: 15px; color: #33333a; }
+
+  /* ---------- Publications ---------- */
+  .pub-summary {
+    display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 18px;
+  }
+  .ps-item {
+    flex: 1; min-width: 150px;
+    background: linear-gradient(135deg, #f3f2ff, #ffffff);
+    border: 1px solid #d9d6ff; border-radius: 14px;
+    padding: 16px 20px; box-shadow: var(--shadow);
+  }
+  .ps-num {
+    display: block; font-size: 30px; font-weight: 800; line-height: 1.1;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .ps-item.wide .ps-num { font-size: 17px; padding-top: 6px; }
+  .ps-label { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .pub-legend { font-size: 13px; color: var(--faint); margin: 0 0 18px; }
+  .pub {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 15px 4px; border-bottom: 1px solid var(--line);
+  }
+  .pub:last-child { border-bottom: none; }
+  .pub .yr {
+    flex: 0 0 46px; font-size: 13px; font-weight: 700; color: var(--faint);
+    padding-top: 3px; text-align: right;
+  }
+  .pub .body { flex: 1; }
+  .pub .title { font-size: 15.5px; font-weight: 650; color: var(--ink); }
+  .pub .authors { font-size: 13.5px; color: var(--muted); margin-top: 3px; }
+  .pub .authors .me { color: var(--accent-ink); font-weight: 700; }
+  .venue {
+    display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .02em;
+    padding: 2px 9px; border-radius: 6px; margin-right: 8px; vertical-align: 1px;
+    white-space: nowrap;
+  }
+  .v-top { color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .v-mid { color: #1e40af; background: #dbeafe; }
+  .v-pre { color: #4b5563; background: #ececeb; }
+  .oral {
+    display: inline-block; font-size: 11px; font-weight: 700; color: var(--gold);
+    background: var(--gold-soft); border: 1px solid #f0e2bf;
+    padding: 1px 7px; border-radius: 5px; margin-left: 6px;
+  }
+
+  /* ---------- Service ---------- */
+  .service { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .svc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 22px; box-shadow: var(--shadow);
+  }
+  .svc.feature {
+    background: linear-gradient(135deg, #f3f2ff, #ffffff);
+    border-color: #d9d6ff;
+  }
+  .svc .yr { font-size: 13px; font-weight: 700; color: var(--faint); }
+  .svc .name { font-size: 18px; font-weight: 750; margin: 3px 0; }
+  .svc .kind { font-size: 14px; color: var(--muted); }
+  .svc.feature .kind { color: var(--accent-ink); font-weight: 600; }
+
+  /* ---------- Awards ---------- */
+  .awards { display: flex; flex-wrap: wrap; gap: 10px; }
+  .award {
+    display: flex; align-items: baseline; gap: 10px;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 15px; box-shadow: var(--shadow);
+    font-size: 14px;
+  }
+  .award .ay { font-weight: 700; color: var(--accent-ink); font-size: 13px; }
+  .award .an { color: #333; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 64px; background: #16142e; color: #d7d8f0;
+    padding: 34px 24px; text-align: center;
+  }
+  footer .cta { font-size: 19px; font-weight: 650; color: #fff; margin: 0; }
+
+  @media (max-width: 720px) {
+    .hero { padding: 60px 20px 76px; }
+    .hero-inner { flex-direction: column-reverse; align-items: flex-start; gap: 24px; }
+    .hero-photo img { width: 130px; height: 130px; }
+    .hero h1 { font-size: 38px; }
+    .hero h1 .en { display: block; margin: 8px 0 0; font-size: 20px; }
+    .nav .brand { display: none; }
+    .nav .links { margin-left: 0; }
+    .service, .demo-pair { grid-template-columns: 1fr; }
+    .about { padding: 24px 22px; }
+    main { padding: 8px 20px 30px; }
+  }
+  @media print {
+    /* 页宽匹配桌面布局宽度，视觉与屏幕 1:1，仅做分页——不改任何 padding/尺寸/背景 */
+    @page { size: 1120px 1584px; margin: 0; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html { scroll-behavior: auto; scroll-padding-top: 0; }
+    .nav { display: none !important; }
+    .card:hover { transform: none; box-shadow: var(--shadow); }
+    .about, .card, .pub, .svc, .award, .ps-item { break-inside: avoid; }
+    /* 论文发表落在第二页顶部，显式分页并留出上方空白，避免顶到页首 */
+    #pubs { break-before: page; padding-top: 32px; }
+    /* footer 打印时压缩内边距并贴合内容，避免被挤到空白的第三页 */
+    footer { margin-top: 0; padding-top: 18px; padding-bottom: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+    <h1>刘沛东<span class="en">Peidong Liu</span></h1>
+    <p class="role">具身基础模型预训练负责人</p>
+    <p class="affil">京东探索研究院 · 广东深圳</p>
+    <div class="contacts">
+      <a class="chip" href="mailto:perdon.liu@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        perdon.liu@gmail.com
+      </a>
+      <a class="chip" href="https://scholar.google.com/citations?user=pNBIQ8wAAAAJ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 8l11 6 9-4.9V16h2V8L12 2zM4 13.4v3.6c0 1.7 3.6 3 8 3s8-1.3 8-3v-3.6l-8 4.3-8-4.3z"/></svg>
+        Google Scholar
+      </a>
+      <a class="chip" href="https://github.com/perdonliu" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5A10.5 10.5 0 0 0 1.5 12c0 4.64 3 8.57 7.18 9.96.53.1.72-.23.72-.5v-1.76c-2.92.64-3.54-1.4-3.54-1.4-.48-1.22-1.17-1.54-1.17-1.54-.95-.65.07-.64.07-.64 1.06.07 1.62 1.09 1.62 1.09.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.14.67-1.4-2.33-.27-4.78-1.16-4.78-5.18 0-1.15.41-2.08 1.08-2.82-.11-.27-.47-1.34.1-2.79 0 0 .88-.28 2.88 1.07a10 10 0 0 1 5.24 0c2-1.35 2.88-1.07 2.88-1.07.57 1.45.21 2.52.1 2.79.68.74 1.08 1.67 1.08 2.82 0 4.03-2.45 4.91-4.79 5.17.38.32.71.96.71 1.94v2.88c0 .28.19.61.73.5A10.5 10.5 0 0 0 22.5 12 10.5 10.5 0 0 0 12 1.5z"/></svg>
+        GitHub
+      </a>
+      <a class="chip" href="index.html" aria-label="English home page">
+        <span aria-hidden="true">EN</span>
+        English
+      </a>
+    </div>
+    </div>
+    <div class="hero-photo">
+      <img src="file/photo.jpeg" alt="刘沛东 Peidong Liu">
+    </div>
+  </div>
+</header>
+
+<!-- ==================== NAV ==================== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="brand">刘沛东 · Peidong Liu</span>
+    <div class="links">
+      <a href="#about">简介</a>
+      <a href="#research">主要项目</a>
+      <a href="#awards">荣誉</a>
+      <a href="#pubs">论文发表</a>
+      <a href="#service">学术服务</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about">
+    <div class="sec-head">
+      <h2>简介</h2>
+      <span class="sub">About</span>
+    </div>
+    <div class="about">
+      <p>
+        <strong>2025 年</strong>起就职于京东探索研究院，负责<strong>具身基础模型（Embodied Foundation Model）预训练</strong>，
+        方向包括机器人 <span class="kw">VLA（视觉—语言—动作模型）</span>与<span class="kw">世界模型（World Model）</span>。
+        作为核心研发人员参与的 JoyAI-RA 具身基础模型，在仿真与真机任务上，超越 Physical Intelligence 团队的 π0.5 模型。
+      </p>
+      <p>
+        <strong>2022 至 2025 年</strong>任大疆车载（卓驭）智驾 VLA 方向负责人，业界首次将数十亿参数的多模态大模型部署到 Thor 芯片上，
+        相关能力在 2025 上海车展展示，并获得包括一汽红旗等多个主机厂的认可。
+      </p>
+      <p>
+        <strong>2022 年</strong>于清华大学取得计算机硕士学位，获清华大学校级优秀毕业生、
+        清华大学优秀硕士学位论文及研究生国家奖学金，现任清华大学深圳计算机分会理事；
+        本科毕业于中山大学软件工程专业。曾在商汤科技、腾讯微信、华为诺亚方舟实验室等担任研究实习生。
+        研究涵盖具身智能、世界模型、多模态大模型、视觉感知等方向，谷歌学术引用达到 500 余次，共发表论文 11 篇，其中第一作者 5 篇，
+        发表于 ICLR、ECCV、ACM MM、WWW 等会议，并担任机器人领域会议 CoRL 2026 领域主席（Area Chair）。
+      </p>
+      <div class="career-timeline" aria-label="教育与职业经历时间轴">
+        <div class="career-track">
+          <div class="career-stop"><span class="career-year">2015–2019</span><span class="career-place">中山大学</span></div>
+          <div class="career-stop"><span class="career-year">2019–2022</span><span class="career-place">清华大学</span></div>
+          <div class="career-stop"><span class="career-year">2022–2025</span><span class="career-place">大疆车载（卓驭）</span></div>
+          <div class="career-stop"><span class="career-year">2025–至今</span><span class="career-place">京东探索研究院</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESEARCH ==================== -->
+  <section id="research">
+    <div class="sec-head">
+      <h2>主要项目</h2>
+      <span class="sub">Selected projects</span>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">具身基础模型 · 京东（当前）</span>
+        <h3>JoyAI 具身智能系列</h3>
+        <p>
+          围绕机器人自主能力的基础模型工作：JoyAI-RA 0.1 为机器人自主基础模型，
+          据仿真与真机测试结果优于 π0.5；JoyAI-Sim 为面向「具身数据金字塔」的仿真互转工具链，
+          业界首个提出贯通人类数据、仿真数据与真机遥操数据的完整转换链路；
+          并开展「从视频学习物理世界」的世界模型研究。
+        </p>
+        <div class="refs">
+          项目主页：<a href="https://joyai-ra.github.io/" target="_blank" rel="noopener">JoyAI-RA 0.1</a> ·
+          <a href="https://joyai-sim.github.io/" target="_blank" rel="noopener">JoyAI-Sim</a>
+        </div>
+        <div class="project-media">
+          <h4>JoyAI-RA 0.1 Demo</h4>
+          <video controls autoplay muted loop playsinline preload="metadata" poster="file/JoyAI-RA-0p1.png">
+            <source src="file/joyai-ra-0p1-web.mp4" type="video/mp4">
+            您的浏览器不支持内嵌视频。
+          </video>
+          <p class="caption">JoyAI-RA 0.1 机器人自主能力演示</p>
+        </div>
+        <div class="project-media">
+          <h4>JoyAI-Sim Demo</h4>
+          <img src="file/JoyAI-Sim-pyramid.gif" alt="JoyAI-Sim 具身数据金字塔转换演示">
+          <p class="caption">具身数据金字塔转换工具链演示</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">智能驾驶 · 大疆车载（卓驭）</span>
+        <h3>智驾端到端 VLA 方案</h3>
+        <p>
+          曾任大疆车载（卓驭）智驾 VLA 方向负责人，负责智驾端到端 VLA 方案，
+          将大模型部署到 Thor 芯片上，相关能力在 2025 上海车展展示，并获得包括一汽红旗等多个主机厂的认可。
+        </p>
+        <div class="refs">
+          <a href="https://mp.weixin.qq.com/s/CZh5PSnfoIkE_etBQZMY4A" target="_blank" rel="noopener">查看卓驭 VLA 落地介绍</a>
+        </div>
+        <div class="project-media">
+          <h4>卓驭 VLA 场景理解 Demo</h4>
+          <div class="demo-pair">
+            <figure>
+              <img src="file/zhuoyu_vla1.gif" alt="卓驭 VLA 支持对施工路况理解">
+              <figcaption>卓驭 VLA 支持对施工路况理解</figcaption>
+            </figure>
+            <figure>
+              <img src="file/zhuoyu_vla2.gif" alt="卓驭 VLA 支持路口场景理解">
+              <figcaption>卓驭 VLA 支持路口场景理解</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AWARDS ==================== -->
+  <section id="awards">
+    <div class="sec-head">
+      <h2>荣誉选摘</h2>
+      <span class="sub">Selected honors</span>
+    </div>
+    <div class="awards">
+      <div class="award"><span class="ay">2026</span><span class="an">京东探索研究院 · 博乐人才引荐奖</span></div>
+      <div class="award"><span class="ay">2024</span><span class="an">大疆车载（卓驭） · 2023 年度效率先锋奖</span></div>
+      <div class="award"><span class="ay">2022</span><span class="an">清华大学校级优秀毕业生（前 1%）</span></div>
+      <div class="award"><span class="ay">2022</span><span class="an">清华大学优秀硕士学位论文（前 5%）</span></div>
+      <div class="award"><span class="ay">2021</span><span class="an">清华大学国家奖学金（前 1%）</span></div>
+      <div class="award"><span class="ay">2019</span><span class="an">中山大学优秀毕业生（前 3%）</span></div>
+    </div>
+  </section>
+
+  <!-- ==================== PUBLICATIONS ==================== -->
+  <section id="pubs">
+    <div class="sec-head">
+      <h2>论文发表</h2>
+      <span class="sub">Selected publications</span>
+    </div>
+    <div class="pub-summary">
+      <div class="ps-item">
+        <span class="ps-num">11</span>
+        <span class="ps-label">篇论文发表</span>
+      </div>
+      <div class="ps-item">
+        <span class="ps-num">5</span>
+        <span class="ps-label">篇第一作者</span>
+      </div>
+      <div class="ps-item wide">
+        <span class="ps-num">ICLR · ECCV · ACM MM</span>
+        <span class="ps-label">发表会议</span>
+      </div>
+    </div>
+    <p class="pub-legend">加粗为本人 · <strong style="color:var(--accent-ink)">＊</strong> 表示共同第一作者</p>
+
+    <div class="pub">
+      <div class="yr">2026</div>
+      <div class="body">
+        <div class="title"><span class="venue v-pre">arXiv</span>JoyAI-Sim: A Simulation-Enabled Interconversion Toolchain for the Embodied Data Pyramid · <a href="https://joyai-sim.github.io/" target="_blank" rel="noopener">项目主页</a></div>
+        <div class="authors"><span class="me">Peidong Liu</span>, Yongce Liu, Songyan Guo, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2026</div>
+      <div class="body">
+        <div class="title"><span class="venue v-pre">arXiv</span>JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy · <a href="https://joyai-ra.github.io/" target="_blank" rel="noopener">项目主页</a></div>
+        <div class="authors">Tianle Zhang, Zhihao Yuan, Dafeng Chi, <span class="me">Peidong Liu</span>, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2026</div>
+      <div class="body">
+        <div class="title"><span class="venue v-pre">Preprints</span>Learning the Physical World from Videos: A Prospective Study on World Models</div>
+        <div class="authors">Jiawei Li, Jiarui Yang, <span class="me">Peidong Liu</span>, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2022</div>
+      <div class="body">
+        <div class="title"><span class="venue v-top">ECCV</span>SimCC: a Simple Coordinate Classification Perspective for Human Pose Estimation</div>
+        <div class="authors">Yanjie Li, Sen Yang, <span class="me">Peidong Liu</span>, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2022</div>
+      <div class="body">
+        <div class="title"><span class="venue v-top">ECCV</span>NeXT: Towards High Quality Neural Radiance Fields via Multi-Skip Transformer</div>
+        <div class="authors">Yunxiao Wang, Yanjie Li, <span class="me">Peidong Liu</span>, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2022</div>
+      <div class="body">
+        <div class="title"><span class="venue v-top">WWW</span>Multi-task Ranking with User Behaviors for Text-Video Search</div>
+        <div class="authors"><span class="me">Peidong Liu</span>, Dongliang Liao, Jinpeng Wang, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2021</div>
+      <div class="body">
+        <div class="title"><span class="venue v-top">ICLR</span>Loss Function Discovery for Object Detection via Convergence-Simulation Driven Search</div>
+        <div class="authors"><span class="me">Peidong Liu</span>, Gengwei Zhang＊, Bochao Wang, et al. <span style="color:var(--faint)">— 目标检测领域首个 AutoLoss 工作，代码开源</span></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2021</div>
+      <div class="body">
+        <div class="title"><span class="venue v-top">ACM MM</span>WeClick: Weakly-Supervised Video Semantic Segmentation with Click Annotations <span class="oral">Oral</span></div>
+        <div class="authors"><span class="me">Peidong Liu</span>, Zibin He＊, Xiyu Yan＊, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2021</div>
+      <div class="body">
+        <div class="title"><span class="venue v-mid">ICASSP</span>Visual Privacy Protection via Mapping Distortion</div>
+        <div class="authors">Yiming Li＊, <span class="me">Peidong Liu＊</span>, Yong Jiang, et al. <span style="color:var(--faint)">— 代码开源</span></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2020</div>
+      <div class="body">
+        <div class="title"><span class="venue v-mid">ICASSP</span>Deep Flow Collaborative Network for Online Visual Tracking</div>
+        <div class="authors"><span class="me">Peidong Liu</span>, Xiyu Yan, Yong Jiang, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="yr">2018</div>
+      <div class="body">
+        <div class="title"><span class="venue v-top">WWW</span>LDA Meets Word2Vec: A Novel Model for Academic Abstract Clustering</div>
+        <div class="authors">Changzhou Li, Yao Lu, Junfeng Wu, ..., <span class="me">Peidong Liu</span>, Junyu Guo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICE ==================== -->
+  <section id="service">
+    <div class="sec-head">
+      <h2>学术服务</h2>
+      <span class="sub">Academic service</span>
+    </div>
+    <div class="service">
+      <div class="svc feature">
+        <div class="yr">2026</div>
+        <div class="name">CoRL</div>
+        <div class="kind">领域主席 · Area Chair</div>
+      </div>
+      <div class="svc">
+        <div class="yr">2022</div>
+        <div class="name">AAAI</div>
+        <div class="kind">审稿人 · Reviewer</div>
+      </div>
+      <div class="svc">
+        <div class="yr">2022</div>
+        <div class="name">WWW</div>
+        <div class="kind">审稿人 · Reviewer</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="cta">欢迎交流与合作</div>
+</footer>
+
+</body>
+</html>
