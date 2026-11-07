@@ -1,522 +1,340 @@
-<meta name="description" content="Peidong Liu&#39;s home page" charset="utf-8">
-<link rel="stylesheet" href="file/index.css" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<style>
-    .career-timeline { margin: 26px 0 34px; overflow-x: auto; padding: 4px 0 8px; }
-    .career-track { position: relative; display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr)); min-width: 600px; padding-top: 2px; }
-    .career-track::before { content: ""; position: absolute; left: 7%; right: 7%; top: 9px; height: 2px; background: linear-gradient(90deg, #cccccc, #527bbd); }
-    .career-stop { position: relative; padding: 24px 10px 0; text-align: center; }
-    .career-stop::before { content: ""; position: absolute; top: 3px; left: 50%; width: 12px; height: 12px; transform: translateX(-50%); border-radius: 50%; background: #527bbd; border: 3px solid #ffffff; box-shadow: 0 0 0 1px #527bbd; }
-    .career-year { display: block; color: #365f9d; font-size: 13px; font-weight: bold; }
-    .career-place { display: block; margin-top: 4px; color: #333333; font-size: 14px; line-height: 1.35; }
-</style>
-
-<title>Peidong Liu</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peidong Liu — Senior Embodied AI Researcher">
+  <title>Peidong Liu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@500;600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f7f4;
+      --ink: #1a1a1a;
+      --muted: #6d6a64;
+      --faint: #9a968f;
+      --line: #d9d5ce;
+      --panel: rgba(255,255,255,.58);
+      --blue: #1264c0;
+      --blue-soft: #e8f1fb;
+      --red: #d7473f;
+      --mono: "IBM Plex Mono", monospace;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: "Source Serif 4", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.55;
+      background-color: var(--paper);
+      background-image: radial-gradient(circle, rgba(28,28,28,.11) .7px, transparent .8px);
+      background-size: 19px 19px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    img, video { max-width: 100%; }
+    .container { width: min(940px, calc(100% - 40px)); margin: 0 auto; padding: 54px 0 80px; }
+    .header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .site-header h1 {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      letter-spacing: -.055em;
+      font-weight: 800;
+    }
+    .tagline {
+      display: flex; flex-wrap: wrap; gap: 10px 24px;
+      margin: 16px 0 0; color: var(--muted);
+      font: 13px/1.5 var(--mono);
+    }
+    .tagline span::before { content: "■"; margin-right: 8px; color: var(--ink); font-size: 9px; }
+    .bio-section { display: grid; grid-template-columns: 132px 1fr; gap: 28px; align-items: center; margin-top: 42px; }
+    .bio-avatar { display: flex; flex-direction: column; align-items: center; }
+    .bio-avatar > img {
+      display: block; width: 108px; height: 108px; object-fit: contain; object-position: center top;
+      border-radius: 50%; border: 1px solid var(--line); padding: 0;
+      background: url("file/photo.jpeg") center top / cover no-repeat;
+    }
+    .bio-text p { margin: 0 0 10px; }
+    .bio-badges { display: flex; justify-content: center; margin-top: 13px; }
+    .scholar-badge { display: inline-flex; line-height: 0; }
+    .scholar-badge img { display: block; height: 20px; width: auto; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 9px; margin: 0; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 14px; border: 1px solid var(--line); border-radius: 4px;
+      color: #353535; background: rgba(255,255,255,.52); font: 12px var(--mono);
+      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    }
+    .social-btn:hover { border-color: #aaa49b; text-decoration: none; background: #fff; }
+    section { margin-top: 58px; }
+    .section-title {
+      display: block;
+      margin: 0 0 18px; font: 700 29px/1.2 var(--sans); letter-spacing: -.035em;
+    }
+    .section-note { color: var(--muted); font: 12px var(--mono); margin: -8px 0 16px; }
+    .news-panel { padding: 13px 16px; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); }
+    .news-list, .edu-list, .exp-list, .pub-list, .simple-list { list-style: none; margin: 0; padding: 0; }
+    .news-item { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 5px 0; }
+    .news-date { align-self: start; padding: 3px 6px; color: var(--faint); background: #eceae6; border-radius: 3px; font: 10px var(--mono); text-align: center; }
+    .news-content { font-size: 14.5px; }
+    .news-content::before { content: "🎉"; margin-right: 7px; }
+    .list-item {
+      display: grid; grid-template-columns: 126px 184px 1fr; gap: 18px; align-items: center;
+      padding: 20px 4px; border-top: 1px solid var(--line);
+    }
+    .list-item:last-child { border-bottom: 1px solid var(--line); }
+    .period { color: var(--faint); font: 10px/1.65 var(--mono); white-space: pre-line; text-transform: uppercase; }
+    .logo-box { width: 184px; height: 66px; display: grid; place-items: center; padding: 0 10px; overflow: hidden; }
+    .logo-box img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .logo-box img.logo-dji { width: 76%; height: 76%; }
+    .collaboration-panel {
+      display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0;
+      padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .collaboration-logo {
+      min-width: 0; height: 88px; display: grid; place-items: center; padding: 4px 24px;
+    }
+    .collaboration-logo + .collaboration-logo { border-left: 1px solid var(--line); }
+    .collaboration-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 64px; object-fit: contain; }
+    .collaboration-logo img.logo-wide { max-height: 48px; }
+    .collaboration-logo img.logo-emphasis { max-width: calc(100% + 34px); max-height: 58px; }
+    .collaboration-logo img.logo-square { max-height: 64px; }
+    .entry-content h3 { margin: 0 0 3px; font: 700 17px/1.35 var(--serif); }
+    .entry-content p { margin: 2px 0; font-size: 14px; }
+    .entry-content .detail { color: var(--muted); font-style: italic; }
+    .placeholder { padding: 24px; border: 1px dashed var(--line); color: var(--faint); background: rgba(255,255,255,.3); font: 12px var(--mono); }
+    .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; }
+    .featured-card { overflow: hidden; border: 1px solid var(--line); border-radius: 5px; background: rgba(255,255,255,.65); }
+    .featured-card video, .featured-card img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #111; }
+    .featured-card .caption { padding: 10px 12px 12px; }
+    .featured-card h3 { margin: 0 0 3px; font: 700 14px var(--sans); }
+    .featured-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .pub-item { display: grid; grid-template-columns: 154px 1fr; gap: 20px; padding: 20px 0; border-top: 1px solid var(--line); }
+    .pub-item:last-child { border-bottom: 1px solid var(--line); }
+    .pub-thumb { width: 154px; height: 96px; object-fit: contain; border: 1px solid var(--line); border-radius: 3px; background: #fff; }
+    .pub-title { margin: 0 0 5px; font-size: 16px; line-height: 1.35; font-weight: 700; }
+    .pub-authors, .pub-venue { font-size: 13px; color: var(--muted); }
+    .self { color: var(--ink); font-weight: 700; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 7px; }
+    .pub-link { padding: 2px 7px; border: 1px solid #b9cce2; border-radius: 3px; color: var(--blue); font: 10px var(--mono); }
+    .pub-link:hover { text-decoration: none; background: var(--blue-soft); }
+    .pub-award { color: inherit; font-weight: inherit; }
+    .pub-role {
+      display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px;
+      border: 1px solid #b9cce2; border-radius: 999px; color: var(--blue); background: var(--blue-soft);
+      font: 600 10px var(--mono); letter-spacing: .01em; vertical-align: middle; white-space: nowrap;
+    }
+    .pub-role.first { color: #23703d; border-color: #a8cdb3; background: #edf7ef; }
+    .pub-role.corresponding { color: #ad302b; border-color: #e3aaa6; background: #fff0ef; }
+    .pub-role.core { color: #73510d; border-color: #dcc68f; background: #fff7df; }
+    .pub-role.lead { color: #8b3a2e; border-color: #e0b4aa; background: #fff0ed; }
+    .honors-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .honor-card { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 15px; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); }
+    .honor-year { color: var(--blue); font: 600 12px var(--mono); }
+    .honor-card strong { display: block; font-size: 14px; }
+    .honor-card span { color: var(--muted); font-size: 12px; }
+    .simple-item { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 12px 4px; border-top: 1px solid var(--line); }
+    .simple-item:last-child { border-bottom: 1px solid var(--line); }
+    .simple-year { color: var(--faint); font: 11px var(--mono); }
+    .services-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .services-list .service-item {
+      grid-template-columns: 36px minmax(0, 1fr); grid-template-areas: "logo detail" "logo year";
+      gap: 1px 8px; align-items: center; min-width: 0; padding: 10px;
+      border: 1px solid var(--line); border-radius: 4px; background: var(--panel);
+    }
+    .services-list .service-item:last-child { border-bottom: 1px solid var(--line); }
+    .services-list .service-item .simple-year { grid-area: year; font-size: 9px; }
+    .services-list .service-item > span:last-child { grid-area: detail; font-size: 12px; line-height: 1.3; }
+    .service-logo { grid-area: logo; display: block; width: 36px; height: 30px; padding: 2px; object-fit: contain; }
+    .talk-item { grid-template-columns: 82px minmax(0, 1fr) 210px; align-items: start; }
+    .talk-player { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 5px; background: #fff; }
+    .talk-player video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #111; }
+    .talk-fallback { margin: 0; padding: 7px 9px; color: var(--muted); font: 10px/1.45 var(--mono); border-top: 1px solid var(--line); }
+    footer { margin-top: 66px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--faint); font: 11px var(--mono); display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 940px); padding-top: 34px; }
+      .bio-section { grid-template-columns: 74px 1fr; gap: 16px; align-items: start; }
+      .bio-avatar img { width: 74px; height: 74px; }
+      .list-item { grid-template-columns: 82px 145px 1fr; gap: 12px; }
+      .logo-box { width: 145px; height: 58px; padding: 7px; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .pub-item { grid-template-columns: 110px 1fr; gap: 13px; }
+      .pub-thumb { width: 110px; height: 78px; }
+      .honors-grid { grid-template-columns: 1fr; }
+      .services-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .talk-item { grid-template-columns: 82px 1fr; }
+      .talk-player { grid-column: 2; width: min(100%, 210px); }
+    }
+    @media (max-width: 500px) {
+      body { font-size: 15px; }
+      .bio-section { display: block; }
+      .bio-avatar { float: left; margin: 0 18px 10px 0; }
+      .news-item { grid-template-columns: 65px 1fr; }
+      .list-item { grid-template-columns: 138px 1fr; align-items: start; }
+      .list-item .period { grid-column: 1 / -1; }
+      .logo-box { width: 138px; height: 54px; }
+      .collaboration-panel { grid-template-columns: 1fr; gap: 0; padding: 0; }
+      .collaboration-logo { height: 82px; padding: 14px 30px; }
+      .collaboration-logo + .collaboration-logo { border-left: 0; border-top: 1px solid var(--line); }
+      .collaboration-logo img.logo-emphasis { max-width: 70%; max-height: 52px; }
+      .pub-item, .simple-item { grid-template-columns: 1fr; }
+      .talk-player { grid-column: 1; }
+      .services-list { grid-template-columns: 1fr; }
+      .pub-thumb { width: 100%; height: 150px; }
+      .period { white-space: normal; }
+      footer { display: block; }
+    }
+  </style>
+</head>
 <body>
-    <div id="layout-content" style="margin-top:25px">
-        <table>
-            <tbody>
-                <tr>
-                    <td width="670">
-                        <div id="toptitle">
-                            <h1>Peidong Liu<img src="file/lpd_chinese.png" height="40px" style="margin-bottom:-10px;margin-left:20px"></h1>
-                            <!-- <a href="file/CV_CN.pdf" target="_blank"><font size="2px">[中文简历]</font></a> -->
-                            <a href="https://scholar.google.com/citations?user=pNBIQ8wAAAAJ&hl=en" target="_blank"><font size="2px">[Google Scholar]</font></a>
-                            <!-- <a href="https://github.com/PerdonLiu" target="_blank"><font size="2px">[Github]</font></a> -->
-                        </div>
-                        <!-- <h3>Advanced Algorithm Engineer in DJI Automotive</h3> -->
-                        <h3>Embodied Foundation Model Researcher at JD Explore Academy</h3>
-                        <p>
-                            Shenzhen, Guangdong, China. <br>
-                            <!-- Department of Computer Science and Technology<br> Tsinghua University <br> Beijing, China. 100091.<br> -->
-                            <br> <b style="unicode-bidi:bidi-override; direction: rtl;">moc.liamg@uil.nodrep :liamE</span>
-                            <br>
-                        </p>
-                    </td>
-                    <td>
-                        <img src="file/photo.jpeg" border="0" width="200">
-                    </td>
-                </tr>
-                <tr>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h2>Biography</h2>
-        <p>
-            I am currently an embodied foundation model researcher at JD Explore Academy. My work primarily focuses on pre-training embodied foundation models, with particular emphasis on Visual-Language-Action Models and World Action Models. I also explore physically aligned world-model paradigms that bridge video observations and the physical world by modeling three-dimensional structure, physical properties, and causal dynamics. If you are interested in an internship opportunity, please feel free to drop me an email.
-        </p>
-        <p>
-             Before that, I was a lead for the visual-language-action model (VLA) at the DJI Automotive and especially focus on fine-tuning VLA to address the challenges posed by long-tailed scenarios. I obtained my M.S. in Computer Science from Tsinghua University in 2022, as an outstanding graduate. I have been fortunate to closely work with Prof. <a href="https://scholar.google.com/citations?user=voxznZAAAAAJ&hl=en&oi=ao" target=_blank>Xiaodan Liang</a> at Sun Yat-sen University, Dr. <a href="https://scholar.google.com/citations?user=J_8TX6sAAAAJ&hl=en&oi=ao" target=_blank>Hang Xu</a> at Huawei Noah's Ark Lab, Dr. <a href="https://scholar.google.com/citations?user=PnNAAasAAAAJ&hl=en&oi=ao" target=_blank>Litong Feng</a> and Dr. <a href="https://scholar.google.com/citations?user=q4lnWaoAAAAJ&hl=en&oi=ao" target=_blank>Xinjiang Wang</a> at SenseTime Research. I received my B.S. in Software Engineering from Sun Yat-sen University summa cum laude in 2019. I have also worked as a research intern at SenseTime, WeChat, and Huawei Noah's Ark Lab. My research interest lies in computer vision and visual-language model.
-        </p>
-        <div class="career-timeline" aria-label="Education and career timeline">
-            <div class="career-track">
-                <div class="career-stop"><span class="career-year">2015–2019</span><span class="career-place">Sun Yat-sen University</span></div>
-                <div class="career-stop"><span class="career-year">2019–2022</span><span class="career-place">Tsinghua University</span></div>
-                <div class="career-stop"><span class="career-year">2022–2025</span><span class="career-place">DJI Automotive (Zhuoyu)</span></div>
-                <div class="career-stop"><span class="career-year">2025–Present</span><span class="career-place">JD Explore Academy</span></div>
-            </div>
+  <main class="container">
+    <header class="site-header">
+      <div class="header-top">
+        <h1>Peidong Liu</h1>
+        <div class="social-links">
+          <a class="social-btn" href="mailto:perdon.liu@gmail.com">✉ Email</a>
+          <a class="social-btn" href="https://scholar.google.com/citations?user=pNBIQ8wAAAAJ" target="_blank" rel="noopener">◉ Scholar</a>
+          <a class="social-btn" href="https://github.com/PerdonLiu" target="_blank" rel="noopener">● GitHub</a>
         </div>
-        <!--  After I obtain master's degree, I will join DJI Automotive as an algorithm engineer for perception, led by Dr. <a href="https://scholar.google.com.hk/citations?user=GArEeWQAAAAJ" target=_blank>Xiaozhi Chen</a> and Prof. <a href="https://scholar.google.com/citations?user=u8Q0_xsAAAAJ" target=_blank>Shaojie Shen</a>, and contribute to the field of autonomous driving. My supervisor is Prof. <a href="https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ" target=_blank>Shu-Tao Xia</a>. -->
-        <!-- (led by Dr. <a href="https://scholar.google.com.hk/citations?user=GArEeWQAAAAJ" target=_blank>Xiaozhi Chen</a> and Prof. <a href="https://scholar.google.com/citations?user=u8Q0_xsAAAAJ" target=_blank>Shaojie Shen</a>) -->
-        <h2>News</h2>
-        <ul>
-            <li>(2026-06) We developed <a href="https://arxiv.org/pdf/2606.16776">JoyAI-Sim</a>, a simulation-driven embodied data transformation toolchain for model evaluation and human-aligned data synthesis.</li>
-            <li>(2026-04) We developed <a href="https://arxiv.org/pdf/2604.20100">JoyAI-RA 0.1</a>, a world-leading embodied manipulation model that surpasses PI0.5 in both simulation and real-world performance.</li>
-            <li>(2025-04) The VLA capabilities are publicly demonstrated at the 2025 Shanghai Auto Show (see <a href="https://mp.weixin.qq.com/s/Y3RCZjBP4nPBRq3sAa3q1Q">wechat link</a> for details).</li>
-            <li>(2024-01) I am awarded 2023 Annual Efficiency Vanguard Award at DJI Automotive for the outstanding contributions.</li>
-            <!-- <li><b style="color:red">I am actively looking for Ph.D. position worldwide starting Fall 2022.</b></li> -->
-            <li>(2022-07) Two of our works are accepted by ECCV2022.</li>
-            <li>(2022-06) I am awarded both University-wise (Top 1%) and Department-wise (Top 5%) Outstanding Graduate at Tsinghua University.</li>
-            <li>(2022-06) I am awarded Outstanding Master's Thesis Award at Tsinghua University (Top 5%).</li>
-            <li>(2021-10) I am awarded National Scholarship for Postgraduate at Tsinghua University (Top 1%).</li>
-            <li>(2021-07) Our work is accecpted by ACM MM2021 as an Oral paper.</li>
-            <li>(2021-02) I am invited to give a talk about our ICLR2021 paper in QingYuan (青源 in Chinese) Seminar, organized by <a href="https://www.baai.ac.cn/">Beijing Academy of Artificial Intelligence (BAAI)</a>. Thanks for SenseTime's invitation. Please see more details <a href="https://event.baai.ac.cn/activities/131">here</a>.</li>
-            <li>(2021-01) <a href="https://openreview.net/forum?id=5jzlpHvvRk">Our paper</a> is accecpted by ICLR2021. The first Autoloss work for object detection. The code is released <a href="https://github.com/PerdonLiu/CSE-Autoloss">here</a>.</li>
-        </ul>
+      </div>
+      <div class="tagline">
+        <span>Senior Embodied AI Researcher</span>
+        <span>JD Explore Academy</span>
+        <span>Shenzhen, China</span>
+      </div>
+    </header>
 
-        <h2>Project</h2>
-        <table style="width:100%; border-spacing:0; margin-bottom:28px">
-            <tr>
-                <td style="display:block; width:auto; border:1px solid #ddd; padding:18px; margin-bottom:18px; vertical-align:top">
-                    <h3>JoyAI Embodied Intelligence Series</h3>
-                    <p>
-                        JoyAI-RA 0.1 is a foundation model for robotic autonomy, while JoyAI-Sim is a simulation-enabled
-                        interconversion toolchain for the embodied data pyramid.
-                    </p>
-                    <p>
-                        Project pages:
-                        <a href="https://joyai-ra.github.io/" target="_blank">JoyAI-RA 0.1</a> ·
-                        <a href="https://joyai-sim.github.io/" target="_blank">JoyAI-Sim</a>
-                    </p>
-                    <div style="margin-top:18px; padding-top:14px; border-top:1px solid #ddd">
-                        <h4>JoyAI-RA 0.1 Demo</h4>
-                        <video controls autoplay muted loop playsinline preload="metadata" poster="file/JoyAI-RA-0p1.png" style="width:100%; height:auto">
-                            <source src="file/joyai-ra-0p1-web.mp4" type="video/mp4">
-                            Your browser does not support embedded video.
-                        </video>
-                    </div>
-                    <div style="margin-top:18px; padding-top:14px; border-top:1px solid #ddd">
-                        <h4>JoyAI-Sim Demo</h4>
-                        <img src="file/JoyAI-Sim-pyramid.gif" alt="JoyAI-Sim embodied data pyramid demo" style="width:100%; height:auto">
-                    </div>
-                </td>
-                <td style="display:block; width:auto; border:1px solid #ddd; padding:18px; vertical-align:top">
-                    <h3>End-to-End VLA for Autonomous Driving</h3>
-                    <p>
-                        At DJI Automotive (now Zhuoyu Technology), I led the end-to-end VLA effort and deployed
-                        large multimodal models on the NVIDIA DRIVE Thor platform.
-                    </p>
-                    <p>
-                        <a href="https://mp.weixin.qq.com/s/CZh5PSnfoIkE_etBQZMY4A" target="_blank">View the Zhuoyu VLA deployment introduction</a>
-                    </p>
-                    <div style="margin-top:18px; padding-top:14px; border-top:1px solid #ddd">
-                        <h4>Zhuoyu VLA Scene Understanding Demos</h4>
-                        <img src="file/zhuoyu_vla1.gif" alt="Zhuoyu VLA understands construction-zone conditions" style="width:100%; height:auto">
-                        <p style="margin-top:6px">Understanding construction-zone conditions</p>
-                        <img src="file/zhuoyu_vla2.gif" alt="Zhuoyu VLA understands intersection scenarios" style="width:100%; height:auto; margin-top:10px">
-                        <p style="margin-top:6px">Understanding intersection scenarios</p>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-        <h2>Publications</h2>
-        * denotes equal contribution.
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/JoyAI-Sim.png' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>JoyAI-Sim: A Simulation-Enabled Interconversion Toolchain for the Embodied Data Pyramid [<a href="https://arxiv.org/pdf/2606.16776">PDF</a>] [<a href="https://joyai-sim.github.io/">Project Page</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p><b style="color:black">Peidong Liu</b>, Yongce Liu, Songyan Guo, et al.</p>
-                    <p>arXiv preprint, 2026</p>
-                </td>
-            </tr>
-        </table>
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/JoyAI-RA-0p1.png' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy [<a href="https://arxiv.org/pdf/2604.20100">PDF</a>] [<a href="https://joyai-ra.github.io/">Project Page</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Tianle Zhang, Zhihao Yuan, Dafeng Chi, <b style="color:black">Peidong Liu</b>, et al.</p>
-                    <p>arXiv preprint, 2026</p>
-                </td>
-            </tr>
-        </table>
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/PhysicalWorld.png' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>Learning the Physical World from Videos: A Prospective Study on World Models [<a href="https://www.preprints.org/frontend/manuscript/d0aa074b5c2f014c24afeacf52017622/download_pub">PDF</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Jiawei Li, Jiarui Yang, <b style="color:black">Peidong Liu</b>, et al.</p>
-                    <p>Preprints.org, 2026</p>
-                </td>
-            </tr>
-        </table>
-
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/SimCC.png' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>SimCC: a Simple Coordinate Classification Perspective for Human Pose Estimation [<a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136660088.pdf">PDF</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Yanjie Li, Sen Yang, <b style="color:black">Peidong Liu</b>, et al.</p>
-                    <p>European Conference on Computer Vision (ECCV), 2022</p>
-                </td>
-            </tr>
-        </table>
-
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/NEXT_arc.png' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>NeXT: Towards High Quality Neural Radiance Fields via Multi-Skip Transformer [<a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136920069.pdf">PDF</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Yunxiao Wang, Yanjie Li, <b style="color:black">Peidong Liu</b>, et al.</p>
-                    <p>European Conference on Computer Vision (ECCV), 2022</p>
-                </td>
-            </tr>
-        </table>
-        
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/MTRUB.jpg' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>Multi-task Ranking with User Behaviors for Text-Video Search [<a href="https://dl.acm.org/doi/10.1145/3487553.3524207">PDF</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p><b style="color:black">Peidong Liu</b>, Dongliang Liao, Jinpeng Wang, et al.</p>
-                    <p>International World Wide Web Conferences (WWW, CCF-A) Companion, 2022</p>
-                </td>
-            </tr>
-        </table>
-
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/CSE-Autoloss.jpg' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>Loss Function Discovery for Object Detection via Convergence-Simulation Driven Search [<a href="https://openreview.net/forum?id=5jzlpHvvRk">PDF</a>] [<a href="https://event.baai.ac.cn/activities/131">Talk</a>] [<a href="file/cse_poster.pdf">Poster</a>] [<a href="file/cse-ppt.pdf">PPT</a>] [<a href="https://github.com/PerdonLiu/CSE-Autoloss">Code</a>] </h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p><b style="color:black">Peidong Liu*</b>, Gengwei Zhang*, Bochao Wang, et al.</p>
-                    <p>International Conference on Learning Representations (ICLR), 2021.</p>
-                </td>
-            </tr>
-        </table>
-
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/MFD.jpg' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>WeClick: Weakly-Supervised Video Semantic Segmentation with Click Annotations [<a href="https://arxiv.org/pdf/2107.03088.pdf">PDF</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p><b style="color:black">Peidong Liu*</b>, Zibin He*, Xiyu Yan*, et al.</p>
-                    <p>ACM International Conference on Multimedia (ACM MM, CCF-A) <b style="color:black">Oral</b>, 2021.</p>
-                </td>
-            </tr>
-        </table>
-
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/privacy.jpg' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>Visual Privacy Protection via Mapping Distortion [<a href="https://arxiv.org/pdf/1911.01769v2.pdf">PDF</a>] [<a href="https://github.com/PerdonLiu/Visual-Privacy-Protection-via-Mapping-Distortion">Code</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Yiming Li*, <b style="color:black">Peidong Liu*</b>, Yong Jiang, et al.</p>
-                    <p>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2021</p>
-                </td>
-            </tr>
-        </table>
-        
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/DFCNet.jpg' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>Deep Flow Collaborative Network for Online Visual Tracking [<a href="./file/icassp2020.pdf">PDF</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p><b style="color:black">Peidong Liu</b>, Xiyu Yan, Yong Jiang, et al.</p>
-                    <p>International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2020</p>
-                </td>
-            </tr>
-        </table>
-
-        <table style="width:100%">
-            <tr>
-                <td rowspan="3" width='30%'><img src='file/PW-LDA.png' width='100%'></img></td>
-                <td rowspan="3" width='2%'></td>
-                <td><h4>LDA Meets Word2Vec: A Novel Model for Academic Abstract Clustering [<a href="./file/www2018.pdf">PDF</a>]</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <p>Changzhou Li, Yao Lu, Junfeng Wu, Yongrui Zhang, Zhongzhou Xia, Tianchen Wang, Dantian Yu, Xurui Chen, <b style="color:black">Peidong Liu</b>, Junyu Guo</p>
-                    <p>International World Wide Web Conferences (WWW, CCF-A) Companion, 2018</p>
-                </td>
-            </tr>
-        </table>
-
-
-        <!-- <p>
-            1. <b>P. Liu.</b>, Xiyu Yan, Yong Jiang, Shu-Tao Xia. Deep Flow Collaborative Network for Online Visual Tracking. ICASSP2020.<a href="./file/icassp2020.pdf">[pdf]</a>
-        </p>
-        <p>
-            2. C. Li, Y. Lu, J. Wu, Y. Zhang, Z. Xia, T. Wang, D. Yu, X. Chen, <b>P. Liu</b>, and J. Guo. LDA Meets Word2Vec: A Novel Model for Academic Abstract Clustering. In The 2018 Web Conference Companion. WWW2018.<a href="./file/www2018.pdf">[pdf]</a>
-        </p>
-        <p>
-            3. <b>P. Liu*</b>, Yiming Li*, Yong Jiang, Shu-Tao Xia. Visual Privacy Protection via Mapping Distortion. arXiv preprint arXiv: 1911.01769.<a href="./file/privacy2020.pdf">[pdf]</a>
-        </p> -->
-        <h2>Selected Awards</h2>
-        <ul>
-            <li>2026.06 JD Explore Academy Bole Talent Referral Award</li>
-            <li>2024.01 DJI Automotive 2023 Annual Efficiency Vanguard Award</li>
-            <li>2022.06 University-wise (Top 1%) and Department-wise (Top 5%) Outstanding Graduate at Tsinghua University</li>
-            <li>2022.06 Outstanding Master's Thesis Award at Tsinghua University (Top 5%)</li>
-            <li>2021.10 National Scholarship for Postgraduate (Top 1%)</li>
-            <li>2019.06 Outstanding Graduate of Sun Yat-sen University (Top 3%)</li>
-            <li>2018.10 Second Class Academic Scholarship of Sun Yat-sen University (Top 8%)</li>
-            <li>2017.10 Bronze Award in Intel Cup – Parallel Application Challenge (PAC) 2017, China (Top 6%)</li>
-            <li>2017.10 First Class Academic Scholarship of Sun Yat-sen University (Top 3%)</li>
-            <li>2017.01 Honorable Mention in Interdisciplinary Contest in Modeling</li>
-            <li>2016.10 First Class Academic Scholarship of Sun Yat-sen University (Top 3%)</li>
-        </ul>
-
-        <!-- <h2>Research Experience in both Academic and Industry</h2>
-        <table id="tbTeaching" width="100%">
-            <tbody>
-                <tr>
-                    <td valign="top" width="16%">2022.07 - till now      </td>
-                    <td><b class="Institute">Perception Group, DJI Automotive</b><br>
-                    <b class="Status">Advanced Computer Vision Algorithm Engineer</b><br>
-                    <li class="Works" margin-left="10000px">Responsible for applying Visual-Language-Action (VLA) models in autonomous driving from scratch, which encompasses an extensive survey of open-source data and models, the establishment of data annotation and model fine-tuning pipeline. This includes the design of prompts, LoRA fine-tuning, and the utilization of Deepspeed for multi-node training. By leveraging both open-source and proprietary datasets, the model has been fine-tuned to possess capabilities in perception, decision-making, and planning. The VLA realizes two types of capabilities: understanding and decision-making for long-tail scenarios and voice control for ambiguous commands</li>
-                    <li class="Works" margin-left="10000px">Developed the multimodal large model in image-text retrieval, focusing on mining long-tail data of user interest within massive video databases, with the aim of empowering autonomous driving applications. Specifically, I leverage LLM (Large Language Model) and Diffusion Model to generate synthetic data, augmenting the existing dataset and enhancing the model's performance</li>
-                    <li class="Works" margin-left="10000px">Developed multiple Bird-Eye-View (BEV) lane detection solutions, including temporal BEV, fisheye BEV and road topology, aiming to facilitate the implementation of various solutions in mass production projects <p><b>(I achieved great performance as a result of my accomplishments)</b> </li>
-                    <li class="Works" margin-left="10000px">Optimized Closed-loop lane detection data recycle process, which involves the entire cycle of data collection, feedback, filtering, reconstruction, annotation, etc. This comprehensive approach has greatly improved data recycle efficiency by over 100% through streamlining coordination and collaboration among several modules <b>(I was awarded the 2023 Annual Efficiency Vanguard Award at DJI Automotive due to my outstanding contributions)</b></p> </li>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr> -->
-
-                <!-- <tr>
-                    <td valign="top" width="16%">2019.09 - 2022.06      </td>
-                    <td><b class="Institute">Department of Computer Science and Technology, Tsinghua University</b><br>
-                    <b class="Status">Master Student</b><br>
-                    <b class="Mentor">Supervisor: Shu-Tao Xia</b><br>
-                    <li class="Works" margin-left="10000px">Proposed Memory Flow Distillation, called MFD, for video semantic segmentation. MFD utilizes weakly-supervised training pattern, optical flow and distillation to alleviate two issues: ﬁne-annotation scarcity and low inference speed. For PSPNet MobileNetV2, MFD increases the performance by 10.24% mIoU and reaches a real-time speed (ACM MM2021 Oral)</li>
-                    <li class="Works" margin-left="10000px">Proposed a Flow Collaborative Network, called DFCNet, for online visual tracking. DFCNet only runs the complex feature network on sparse keyframes, which is selected by raised adaptive keyframe scheduling. DFCNet maximizes the beneﬁts of both feature appearance and temporal information and reaches 30% faster than baseline without compromising accuracy (ICASSP2020)</li>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-
-                <tr>
-                    <td valign="top" >2021.06 - 2022.05      </td>
-                    <td><b class="Institute">Search Application Department, WeChat Group, Tencent</b><br>
-                    <b class="Status">Computer Vision Algorithm Engineer Intern</b><br>
-                    <li class="Works" margin-left="10000px">To address the challenges of low click-through rates and completion rates in video retrieval for WeChat Channel, as well as the issue of imprecise query-item matching, we defined a new problem: multi-target ranking for video retrieval. By extracting 800k query-document pairs from user interaction logs and employing a multimodal fusion model combined with the MMOE framework as the baseline, the research modeled multiple objectives and achieved a 3% improvement in the average AUC-ROC for each objective</li>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-
-                <tr>
-                    <td valign="top" >2020.04 - 2021.03      </td>
-                    <td><b class="Institute">Noah's Ark Lab, Huawei</b><br>
-                    <b class="Status">Research Intern</b><br>
-                    <b class="Mentor">Mentor: Xiaodan Liang, Hang Xu, Bochao Wang</b><br>
-                    <li class="Works" margin-left="10000px">Proposed an effective convergence-simulation driven evolutionary search algorithm, called CSE-Autoloss, for object detection loss function discovery, which achieves 20x speedup via progressive convergence-simulation modules (ICLR2021)</li>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-
-                <tr>
-                    <td valign="top" width="16%">2019.07 - 2019.09      </td>
-                    <td><b class="Institute">Y-Tech AI Lab, Beijing Kuaishou Technology Ltd.</b><br>
-                    <b class="Status">AI Intern</b><br>
-                    <li class="Works" margin-left="10000px">Improved face parsing task with landmarks by around 2% in accuracy on baseline model UNet
-                        </li>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td valign="top" width="16%">2018.11 - 2019.06      </td>
-                    <td><b class="Institute">Fundamental Technique Research Group, SenseTime Research</b><br>
-                    <b class="Status">Research Intern</b><br>
-                    <b class="Mentor">Mentor: Litong Feng (Senior Researcher, Ph.D.)</b><br>
-                    <li class="Works" margin-left="10000px">Solely responsible for building the entire pipeline for converting pytorch models to caffe models, including models for classification (Resnet, Inception Resnet series) and Object Detection (SSD, Faster Rcnn), etc.
-                        </li>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr> -->
-                <!-- <tr>
-                    <td valign="top" width="16%">2018.06 - 2018.08      </td>
-                    <td><b class="Institute">Institute of Information System and Engineering, School of Software, THU</b><br>
-                    <b class="Status">Research Assistant</b><br>
-                    <b class="Mentor">Mentor: Chunping Li (Associate Professor, School of Software, THU)</b><br>
-                    <li class="Works" margin-left="10000px">Implemented the code of several common topic models in NLP area like LDA, GSDMM, HLDA, CTM</li>
-                    <li class="Works">Analyzed Weibo data through topic models above and performed experiments</li></td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr> -->
-<!-- 
-                <tr>
-                    <td width="15%" valign="top">2018.03 - 2018.05      </td>
-                    <td width="85%"><b class="Institute">NUS-Tsinghua Center for Extreme Search(NExT++), NUS, Singapore</b><br>
-                    <b class="Status">Research Assistant</b><br>
-                    <b class="Mentor">Mentor: Zhaoyan Ming (Ph.D., Team Head, NExT++)</b><br>
-                    <li class="Works">Implemented an algorithm to classify Southeast Asian food with complex names and meanings</li>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td valign="top" width="16%">2017.10 - 2018.02      </td>
-                    <td><b class="Institute">Smart Mobile Computing Lab, Advanced Networking and Computing Systems Institute, SYSU</b><br>
-                    <b class="Status">Research Assistant</b><br>
-                    <b class="Mentor">Mentor: Xu Chen (Professor, School of Data and Computer Science, SYSU)</b><br>
-                    <li class="Works" margin-left="10000px">Engaged in modeling 30GB articles of WeChat Moment with effective structural features</li>
-                    <li class="Works">Applied Logistic Regression, Random Forest and GBDT to predict the information growth</li></td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td valign="top" width="16%">2017.07 - 2017.10       </td>
-                    <td><b class="Institute">Natural Language Processing Group, Guangdong Province Key Laboratory of Computational Science, SYSU</b><br>
-                    <b class="Status">Research Assistant</b><br>
-                    <b class="Mentor">Mentor: Yao Lu (Professor, School of Data and Computer Science, SYSU)</b><br>
-                    <li class="Works">Participated in text analysis and text mining of medical scientific literature, including preprocessing, word vector representation with Word2Vec, vector dimension reduction with PCA, keywords obtained via TF-IDF, topic number analysis via AP algorithm and article topics obtained via LDA</li>
-                    <li class="Works">Realized parallelization with Spark</li>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                </tr> -->
-<!--                 <tr>
-                    <td valign="top" width="16%">2017.03 - 2017.06       </td>
-                    <td><b class="Institute">Research Group of School of Government, SYSU</b><br>
-                    <b class="Status">Team Leader</b><br>
-                    <b class="Mentor">Mentor: Zijie Shao (Associate Researcher, School of Government), Yueping Zheng</b><br>
-                    <li class="Works">Designed web crawler program with Python for data collection of Weibo users’ reposts and comments</li>
-                    <li class="Works">Analyzed Weibo information spread modes through text analysis and data mining</li>
-                    <li class="Works">Built server with Tomcat to store videos for online surveys</li></td>
-                </tr> -->
-            </tbody>
-        </table>
-        <!-- <h2>Computer Skills</h2>
-        <ul>
-            <li>Deep Learning Framework: Pytorch; Caffe</li>
-            <li>Advanced Programming Languages: C++; Python; C; Java; R</li>
-            <li>Distributed Framework: Spark</li>
-            <li>Database: SQL; MongoDB</li>
-            <li>Web Development Languages: Html; Css; Javascript; Nodejs; Angularjs</li>
-            <li>Programming Software: Matlab</li>
-            <li>Others: Onnx; Docker; Linux</li>
-        </ul> -->
-
-        <h2>Academic Service</h2>
-        <ul>
-            <li>2026 CoRL Area Chair</li>
-            <li>2022 AAAI Reviewer</li>
-            <li>2022 WWW Reviewer</li>
-        </ul>
-
-        <!-- 
-
-        <h2>Academic Service</h2>
-        Conference Reviewer for AAAI 2022, WWW 2022.
-
-        </p>
-
-        <h2>Education</h2>
-        <p>
-            2019.09 - 2022.06, master student of <a href="http://www.tsinghua.edu.cn/publish/thu2018/index.html" target=_blank>Department of Computer Science and Technology</a> at <a href="http://www.tsinghua.edu.cn/publish/cs/" target=_blank>Tsinghua University</a>
-        </p>
-        <p>
-            2015.09 - 2019.06, undergraduate student of <a href="https://cse.sysu.edu.cn/" target=_blank>School of Computer Science and Engineering</a> at <a href="http://www.sysu.edu.cn/2012/cn/index.htm" target=_blank>Sun Yat-sen University</a>, rank 3/119
-        </p>
-            2018.01 - 2018.05, exchange student of <a href="http://www.comp.nus.edu.sg/" target=_blank>School of Computing</a> at <a href="http://www.nus.edu.sg/" target=_blank>National University of Singapore</a>, research intern in <a href="http://www.nextcenter.org/" target=_blank>NExT++ lab</a>
-        </p> -->
-        
-        <div id="footer">
-            <div id="footer-text"></div>
+    <section class="bio-section" id="about">
+      <div class="bio-avatar">
+        <img src="file/photo.jpeg" alt="Peidong Liu">
+        <div class="bio-badges">
+          <a class="scholar-badge" href="https://scholar.google.com/citations?user=pNBIQ8wAAAAJ" target="_blank" rel="noopener" title="Google Scholar · checked 2026-11-05"><img id="citation-badge" src="https://img.shields.io/badge/Citations-622-4285F4?style=flat&amp;logo=google-scholar&amp;logoColor=white" alt="Google Scholar citations: 622"></a>
         </div>
-    </div>
+      </div>
+      <div class="bio-text">
+        <p>Hi! I am <strong>Peidong Liu</strong>, a senior embodied AI researcher at <strong>JD Explore Academy</strong>. My research focuses on <strong>pre-training for embodied intelligence</strong>, with an emphasis on learning generalizable action representations and policies from large-scale heterogeneous data, including human demonstrations, simulation data, and data collected through embodiment-agnostic interfaces such as UMI. I aim to transfer these capabilities to downstream robotic applications and use real-world robot data to continually refine models, establishing a closed-loop learning framework that integrates pre-training, deployment, and iterative improvement. If you are interested in an internship opportunity, please <a href="mailto:perdon.liu@gmail.com">email me</a>.</p>
+        <p>Previously, I led the VLA Team at <strong>DJI Automotive (now Zhuoyu Technology)</strong>, focusing on fine-tuning VLA models to handle long-tail driving scenarios. I received my M.S. in Computer Science from <strong>Tsinghua University</strong> in 2022 as an Outstanding Graduate, and my B.S. from <strong>Sun Yat-sen University</strong> in 2019, graduating summa cum laude. I have also interned at SenseTime and WeChat.</p>
 
-    Last updated on June 2026. There are <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> visitors, with <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span>times</span> till now.</span>
+      </div>
+    </section>
 
+
+    <section id="news">
+      <h2 class="section-title">News</h2>
+      <div class="news-panel"><ul class="news-list">
+        <li class="news-item"><span class="news-date">09/2026</span><span class="news-content">Our work LAPT-Scale was accepted by CoRL 2026.</span></li>
+        <li class="news-item"><span class="news-date">08/2026</span><span class="news-content">We released <a href="https://joyai-ra-05.github.io/" target="_blank">JoyAI-RA 0.5</a>, a generalist Vision-Language-World-Action model.</span></li>
+        <li class="news-item"><span class="news-date">06/2026</span><span class="news-content">We released <a href="https://joyai-sim.github.io/" target="_blank">JoyAI-Sim</a>, a simulation-driven embodied data transformation toolchain.</span></li>
+        <li class="news-item"><span class="news-date">04/2026</span><span class="news-content">We released <a href="https://joyai-ra.github.io/" target="_blank">JoyAI-RA 0.1</a>, a foundation model for robotic autonomy.</span></li>
+        <li class="news-item"><span class="news-date">04/2025</span><span class="news-content">Our VLA capabilities were demonstrated at the 2025 Shanghai Auto Show.</span></li>
+        <li class="news-item"><span class="news-date">01/2024</span><span class="news-content">Received the 2023 Annual Efficiency Vanguard Award at DJI Automotive.</span></li>
+        <li class="news-item"><span class="news-date">07/2022</span><span class="news-content">Two papers were accepted by ECCV 2022.</span></li>
+      </ul></div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <ul class="edu-list">
+        <li class="list-item"><div class="period">Sep. 2019 —
+Jun. 2022</div><div class="logo-box"><img src="file/logos/thu.png" alt="Tsinghua University logo"></div><div class="entry-content"><h3><a href="https://www.tsinghua.edu.cn/" target="_blank">Tsinghua University</a></h3><p>Department of Computer Science and Technology</p><p class="detail">M.S. in Computer Science · Outstanding Graduate</p></div></li>
+        <li class="list-item"><div class="period">Sep. 2015 —
+Jun. 2019</div><div class="logo-box"><img src="file/logos/sysu.png" alt="Sun Yat-sen University logo"></div><div class="entry-content"><h3><a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a></h3><p>School of Computer Science and Engineering</p><p class="detail">B.S. in Software Engineering · Summa Cum Laude</p></div></li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Research Experience</h2>
+      <ul class="exp-list">
+        <li class="list-item"><div class="period">2025 —
+Present</div><div class="logo-box"><img src="file/logos/jd.png" alt="JD.com logo"></div><div class="entry-content"><h3>JD Explore Academy</h3><p><strong>Senior Embodied Model Researcher</strong></p><p class="detail">Pre-training an embodied foundation model, with emphasis on VLA and World Action Model.</p></div></li>
+        <li class="list-item"><div class="period">2022 —
+2025</div><div class="logo-box"><img class="logo-dji" src="file/logos/dji.png" alt="DJI logo"></div><div class="entry-content"><h3>DJI Automotive</h3><p><strong>VLA Technical Lead</strong></p><p class="detail">Led end-to-end VLA research for autonomous driving and deployed billion-parameter multimodal models on NVIDIA DRIVE Thor.</p></div></li>
+      </ul>
+    </section>
+
+    <section id="demos">
+      <h2 class="section-title">Selected Demos</h2>
+      <div class="featured-grid">
+        <article class="featured-card"><video controls autoplay muted loop playsinline preload="auto" data-playback-rate="2" poster="file/JoyAI-RA-0p1.png"><source src="file/joyai-ra-0p1-web.mp4" type="video/mp4"></video><div class="caption"><h3>JoyAI-RA Demo</h3><p>Robotic autonomy foundation model · JoyAI-RA 0.1 · <a href="https://joyai-ra.github.io/">Project page</a><br>Vision-Language-World-Action model · JoyAI-RA 0.5 · <a href="https://joyai-ra-05.github.io/">Project page</a></p></div></article>
+        <article class="featured-card"><img src="file/JoyAI-Sim-pyramid.gif" alt="JoyAI-Sim demo"><div class="caption"><h3>JoyAI-Sim Demo</h3><p>A simulation-driven embodied data transformation toolchain for model evaluation and ego2robot data synthesis.<br><a href="https://joyai-sim.github.io/">Project page</a></p></div></article>
+        <article class="featured-card"><img src="file/zhuoyu_vla1-hd.gif" alt="DJI Automotive VLA demo"><div class="caption"><h3>DJI Automotive VLA Demo</h3><p>Construction-scene understanding · <a href="https://mp.weixin.qq.com/s/CZh5PSnfoIkE_etBQZMY4A">Deployment story</a></p></div></article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-note">* denotes equal contribution; ✉️ denotes corresponding author. My name is shown in bold.</p>
+      <ul class="pub-list">
+        <li class="pub-item"><img class="pub-thumb" src="https://wla-3.github.io/assets/overview.png" alt="WLA³ overview"><div><h3 class="pub-title">WLA<sup>3</sup>: World Latent Action Modeling for Semantics, Dynamics, and Kinematics</h3><div class="pub-authors"><span class="self">Peidong Liu*✉️</span>, Zhiyuan Xiang*, et al.</div><div class="pub-venue">arXiv preprint, 2026</div><div class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2609.15870">PDF</a><a class="pub-link" href="https://wla-3.github.io/">Project</a><span class="pub-role first">First Author</span><span class="pub-role corresponding"><span aria-hidden="true">✉️</span> Corresponding Author</span></div></div></li>
+        <li class="pub-item"><img class="pub-thumb" src="file/lapt_overview.png" alt="LAPT-Scale overview"><div><h3 class="pub-title">LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos</h3><div class="pub-authors">Zhiyuan Xiang*, <span class="self">Peidong Liu*✉️</span>, et al.</div><div class="pub-venue">Conference on Robot Learning (CoRL), 2026</div><div class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2610.13732">PDF</a><span class="pub-role"><span aria-hidden="true">★</span> Co-first Author</span><span class="pub-role corresponding"><span aria-hidden="true">✉️</span> Corresponding Author</span></div></div></li>
+        <li class="pub-item"><img class="pub-thumb" src="file/JoyAI-RA-0p5-overview.png" alt="JoyAI-RA 0.5 overview"><div><h3 class="pub-title">JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment</h3><div class="pub-authors">Dafeng Chi*, <span class="self">Peidong Liu*</span>, et al.</div><div class="pub-venue">arXiv preprint, 2026</div><div class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2608.05674">PDF</a><a class="pub-link" href="https://joyai-ra-05.github.io/">Project</a><span class="pub-role"><span aria-hidden="true">★</span> Co-first Author</span></div></div></li>
+        <li class="pub-item"><img class="pub-thumb" src="file/JoyAI-Sim.png" alt="JoyAI-Sim"><div><h3 class="pub-title">JoyAI-Sim: A Simulation-Enabled Interconversion Toolchain for the Embodied Data Pyramid</h3><div class="pub-authors"><span class="self">Peidong Liu</span>, Yongce Liu, Songyan Guo, et al.</div><div class="pub-venue">arXiv preprint, 2026</div><div class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2606.16776">PDF</a><a class="pub-link" href="https://joyai-sim.github.io/">Project</a><span class="pub-role first">First Author</span></div></div></li>
+        <li class="pub-item"><img class="pub-thumb" src="file/JoyAI-RA-0p1.png" alt="JoyAI-RA 0.1"><div><h3 class="pub-title">JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy</h3><div class="pub-authors">Tianle Zhang, Zhihao Yuan, Dafeng Chi, <span class="self">Peidong Liu</span>, et al.</div><div class="pub-venue">arXiv preprint, 2026</div><div class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2604.20100">PDF</a><a class="pub-link" href="https://joyai-ra.github.io/">Project</a><span class="pub-role core"><span aria-hidden="true">◆</span> Core Author</span></div></div></li>
+        <li class="pub-item"><img class="pub-thumb" src="file/PhysicalWorld.png" alt="Physical World Models"><div><h3 class="pub-title">Learning the Physical World from Videos: A Prospective Study on World Models</h3><div class="pub-authors">Jiawei Li, Jiarui Yang, <span class="self">Peidong Liu</span>, et al.</div><div class="pub-venue">Preprints.org, 2026</div><div class="pub-links"><a class="pub-link" href="https://www.preprints.org/frontend/manuscript/d0aa074b5c2f014c24afeacf52017622/download_pub">PDF</a></div></div></li>
+        <li class="pub-item"><img class="pub-thumb" src="file/CSE-Autoloss.jpg" alt="CSE-Autoloss"><div><h3 class="pub-title">Loss Function Discovery for Object Detection via Convergence-Simulation Driven Search</h3><div class="pub-authors"><span class="self">Peidong Liu*</span>, Gengwei Zhang*, Bochao Wang, et al.</div><div class="pub-venue">International Conference on Learning Representations (ICLR), 2021</div><div class="pub-links"><a class="pub-link" href="https://openreview.net/forum?id=5jzlpHvvRk">PDF</a><a class="pub-link" href="https://github.com/PerdonLiu/CSE-Autoloss">Code</a><a class="pub-link" href="#talks">Talk</a><span class="pub-role first">First Author</span></div></div></li>
+        <li class="pub-item"><img class="pub-thumb" src="file/MFD.jpg" alt="WeClick"><div><h3 class="pub-title">WeClick: Weakly-Supervised Video Semantic Segmentation with Click Annotations</h3><div class="pub-authors"><span class="self">Peidong Liu*</span>, Zibin He*, Xiyu Yan*, et al.</div><div class="pub-venue">ACM Multimedia (ACM MM), 2021 · <span class="pub-award">Oral</span></div><div class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2107.03088.pdf">PDF</a><span class="pub-role first">First Author</span></div></div></li>
+      </ul>
+    </section>
+
+    <section id="honors">
+      <h2 class="section-title">Honors &amp; Academic Awards</h2>
+      <div class="honors-grid">
+        <div class="honor-card"><div class="honor-year">2026</div><div><strong>Talent Referral Award</strong><span>JD Explore Academy</span></div></div>
+        <div class="honor-card"><div class="honor-year">2024</div><div><strong>Annual Efficiency Vanguard Award</strong><span>DJI Automotive</span></div></div>
+        <div class="honor-card"><div class="honor-year">2022</div><div><strong>Outstanding Graduate · Top 1%</strong><span>Tsinghua University</span></div></div>
+        <div class="honor-card"><div class="honor-year">2022</div><div><strong>Outstanding Master's Thesis · Top 5%</strong><span>Tsinghua University</span></div></div>
+        <div class="honor-card"><div class="honor-year">2021</div><div><strong>National Scholarship · Top 1%</strong><span>Tsinghua University</span></div></div>
+        <div class="honor-card"><div class="honor-year">2019</div><div><strong>Outstanding Graduate · Top 3%</strong><span>Sun Yat-sen University</span></div></div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 class="section-title">Academic Services</h2>
+      <ul class="simple-list services-list">
+        <li class="simple-item service-item"><span class="simple-year">2026</span><img class="service-logo" src="file/logos/corl.png" alt="CoRL logo"><span><strong>CoRL</strong> · Area Chair</span></li>
+        <li class="simple-item service-item"><span class="simple-year">2026</span><img class="service-logo" src="file/logos/aaai.svg" alt="AAAI logo"><span><strong>AAAI</strong> · Reviewer</span></li>
+        <li class="simple-item service-item"><span class="simple-year">2022</span><img class="service-logo" src="file/logos/aaai.svg" alt="AAAI logo"><span><strong>AAAI</strong> · Reviewer</span></li>
+        <li class="simple-item service-item"><span class="simple-year">2022</span><img class="service-logo" src="file/logos/webconf.png" alt="The Web Conference logo"><span><strong>WWW</strong> · Reviewer</span></li>
+      </ul>
+    </section>
+
+    <section id="talks">
+      <h2 class="section-title">Invited Talks</h2>
+      <ul class="simple-list"><li class="simple-item talk-item"><span class="simple-year">2021.02</span><span>Invited talk on <a href="https://github.com/PerdonLiu/CSE-Autoloss" target="_blank" rel="noopener">CSE-Autoloss</a> at the QingYuan Seminar, Beijing Academy of Artificial Intelligence.</span><div class="talk-player"><video controls playsinline preload="metadata" poster="file/cse-autoloss-baai-talk.jpg"><source src="file/cse-autoloss-baai-talk.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><p class="talk-fallback">Talk excerpt · <a href="https://event.baai.ac.cn/live/131" target="_blank" rel="noopener">Official replay</a></p></div></li></ul>
+    </section>
+
+    <section id="collaborations">
+      <h2 class="section-title">Experience and Collaborations</h2>
+      <div class="collaboration-panel" aria-label="Previous research internships and collaborations">
+        <div class="collaboration-logo"><img class="logo-wide logo-emphasis" src="file/logos/thu.png" alt="Tsinghua University"></div>
+        <div class="collaboration-logo"><img class="logo-wide logo-emphasis" src="file/logos/sysu.png" alt="Sun Yat-sen University"></div>
+        <div class="collaboration-logo"><img class="logo-wide" src="file/logos/dji.png" alt="DJI Automotive"></div>
+        <div class="collaboration-logo"><img class="logo-square" src="file/logos/wechat.svg" alt="WeChat"></div>
+        <div class="collaboration-logo"><img class="logo-wide logo-emphasis" src="file/logos/jd.png" alt="JD Explore Academy"></div>
+      </div>
+    </section>
+
+    <footer><span>© 2026 Peidong Liu · Borrowed from <a href="https://tianxingchen.github.io/" target="_blank" rel="noopener">Tianxing Chen</a></span><span>Last updated: September 2026</span></footer>
+  </main>
+  <script>
+    document.querySelectorAll('video[data-playback-rate]').forEach((video) => {
+      const startVideo = () => {
+        const rate = Number(video.dataset.playbackRate) || 1;
+        video.defaultPlaybackRate = rate;
+        video.playbackRate = rate;
+        video.muted = true;
+        video.play().catch(() => {});
+      };
+      video.addEventListener('loadedmetadata', startVideo, { once: true });
+      startVideo();
+    });
+  </script>
 </body>
-
 </html>
